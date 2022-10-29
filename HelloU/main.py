@@ -1,5 +1,4 @@
-"""
-print('Hello U')
+"""print('Hello U')
 age = 4+5
 print(3**3)
 my_cat = 'Lona'
@@ -65,7 +64,26 @@ my_set = {"apple", "banana", "cherry"}
 print(my_set)
 my_set.add("apple")
 print(my_set)
-"""
+
 
 my_file = open('myfile.txt')
+print(my_file.read())
+my_file.seek(0)
+print(my_file.read())
+my_file.seek(0)
+my_file_lines = my_file.readlines()
+print(my_file_lines)"""
 
+with open('myfile.txt') as my_file:
+    content = my_file.read()
+    # print(content)
+    my_file.seek(0)
+    my_file_lines = my_file.readlines()
+    # print(my_file_lines)
+
+with open('myfile.txt', mode='w') as my_file:
+    content = my_file.read()
+    print(content)
+    my_file.seek(0)
+    my_file_lines = my_file.readlines()
+    print(my_file_lines)
