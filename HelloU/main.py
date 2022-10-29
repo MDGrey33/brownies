@@ -81,9 +81,16 @@ with open('myfile.txt') as my_file:
     my_file_lines = my_file.readlines()
     # print(my_file_lines)
 
-with open('myfile.txt', mode='w') as my_file:
+with open('myfile.txt', mode='r') as my_file:
     content = my_file.read()
     print(content)
     my_file.seek(0)
     my_file_lines = my_file.readlines()
     print(my_file_lines)
+
+with open('my_new_file.txt', mode='a') as my_file:
+    my_file.write('\nSIX ON SIXTH')
+
+with open('my_file_lines.txt', mode='w') as my_file:
+    my_file.write('I just deleted the old file and made a new one with this text')
+    
