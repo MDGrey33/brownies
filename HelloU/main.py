@@ -93,4 +93,3 @@ with open('my_new_file.txt', mode='a') as my_file:
 
 with open('my_file_lines.txt', mode='w') as my_file:
     my_file.write('I just deleted the old file and made a new one with this text')
-    
