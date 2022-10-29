@@ -99,3 +99,10 @@ with open('myfile.txt') as my_new_file: #file is opened every time, no need to u
 with open('myfile.txt',mode='r') as myfile: #permission to read file (mode)
     contents = myfile.read()
     print(contents)
+
+with open('my_new_file.txt', mode='a') as f:
+    f.write('\nFOUR ON FOURTH')
+
+with open('my_new_file.txt',mode='r') as myfile: # modes: a-append, w-overwrites, r-read
+    contents = myfile.read()
+    print(contents)
