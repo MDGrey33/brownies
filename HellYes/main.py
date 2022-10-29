@@ -82,4 +82,20 @@ print(new_list.pop())
 
 # SETS are unique
 print(1==2)"""
-%%writefile 
+myfile = open('myfile.txt')
+print(myfile.read())
+print(myfile.read()) #does not print because the file is already read and the cursor is at the end
+
+myfile.seek(0) #resets the cursor
+print(myfile.read())
+myfile.seek(0)
+print(myfile.readlines())
+myfile.seek(0)
+
+with open('myfile.txt') as my_new_file: #file is opened every time, no need to use seek
+    contents = my_new_file.read()
+    print(contents)
+
+with open('myfile.txt',mode='r') as myfile: #permission to read file (mode)
+    contents = myfile.read()
+    print(contents)
