@@ -151,7 +151,7 @@ for the_number in my_list:
         my_list.append(the_number*2)
 print(f'the total is {list_sum}')
 
-"""
+
 
 # Looping through tuples,
 my_list = [(1, 2), (3, 4), (5, 6), (7, 8)]
@@ -165,4 +165,11 @@ for item in my_list:
 for a, b in my_list:
     print(a)
     print(b)
+"""
 
+# unpacking a dictionary to find keys with a specific value
+d = {'k1': 1, "k2": 2, "k3": 3, 'k4': 2}
+
+for key, value in d.items():
+    if value == 2:
+        print(key)
