@@ -165,7 +165,7 @@ for item in my_list:
 for a, b in my_list:
     print(a)
     print(b)
-"""
+
 
 # unpacking a dictionary to find keys with a specific value
 d = {'k1': 1, "k2": 2, "k3": 3, 'k4': 2}
@@ -173,3 +173,40 @@ d = {'k1': 1, "k2": 2, "k3": 3, 'k4': 2}
 for key, value in d.items():
     if value == 2:
         print(key)
+"""
+# While loop
+
+x = 0
+while x < 5:
+    print(x)
+    x = x + 1
+else:
+    print("end")
+
+# pass, continue and break
+
+her_name = 'Maija'
+
+print('pass')
+for letter in her_name:
+    if letter == 'i':
+        pass
+        print('*')
+    print(letter)
+
+print('continue')
+for letter in her_name:
+    if letter == 'i':
+        continue
+        print('*')
+    print(letter)
+
+print('break')
+for letter in her_name:
+    if letter == 'i':
+        break
+        print('*')
+    print(letter)
+
+
+
