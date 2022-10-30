@@ -207,13 +207,20 @@ for letter in her_name:
         break
         print('*')
     print(letter)
-"""
-#Range
+
+# Range
 for num in range(10):
     print(num)
 for num in range(0, 10, 2):
     print(num)
 print(range(10))
 print(list(range(10)))
+"""
+
+# Enumerate
+
+for index, letter in enumerate('Maija'):
+    print(f'at index {index}, we have the letter {letter} \n')
+
 
 
