@@ -318,6 +318,6 @@ for number in range(1, 100):
         print(number)
 """
 
-for word in 'print only the words that start with s in this sentence'.split():
-    if word[0] == 's':
+for word in 'Sam print only the words that start with s in this sentence'.split():
+    if word[0].lower() == 's':
         print(word)
