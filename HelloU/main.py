@@ -316,8 +316,24 @@ for number in range(1, 100):
         print('Buzz')
     else:
         print(number)
-"""
+
 
 for word in 'Sam print only the words that start with s in this sentence'.split():
     if word[0].lower() == 's':
         print(word)
+"""
+for number in range(11):
+    if number % 2 == 0:
+        print(number)
+
+print(list(range(0, 11, 2)))
+
+print(list(range(3, 50, 3)))
+
+
+range_min = int(input('type the range start '))
+range_max = int(input('type the range end '))
+divider = int(input('type multiplier '))
+for number in range(range_min, (range_max + 1)):
+    if number % divider == 0:
+        print(number)
