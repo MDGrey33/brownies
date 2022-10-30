@@ -134,3 +134,19 @@ elif loc == 'Store':
 else:
     print("I do not know much!")
 """
+
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# for loop examples
+for the_number in my_list:
+    print(the_number)
+
+# printing even numbers, if odd multiply by 2 and add to the end of the list to how efficient for is :)
+list_sum = 0
+for the_number in my_list:
+    if the_number % 2 == 0:
+        print(the_number)
+        list_sum = list_sum + the_number
+    else:
+        my_list.append(the_number*2)
+print(f'the total is {list_sum}')
