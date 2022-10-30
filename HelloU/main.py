@@ -133,7 +133,7 @@ elif loc == 'Store':
     print("Welcome to the store!")
 else:
     print("I do not know much!")
-"""
+
 
 my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -150,3 +150,19 @@ for the_number in my_list:
     else:
         my_list.append(the_number*2)
 print(f'the total is {list_sum}')
+
+"""
+
+# Looping through tuples,
+my_list = [(1, 2), (3, 4), (5, 6), (7, 8)]
+print(len(my_list))
+
+# Printing items from a tuple
+for item in my_list:
+    print(item)
+
+# unpacking each item in the tuple
+for a, b in my_list:
+    print(a)
+    print(b)
+
