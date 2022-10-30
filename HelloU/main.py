@@ -222,12 +222,46 @@ print(list(range(10)))
 for index, letter in enumerate('Maija'):
     print(f'at index {index}, we have the letter {letter} \n')
 
-"""
+
 # Zipping multiple lists/strings into a tuple
 
 for name, color, age in zip(['Georges', 'Luna', 'Migo', 'Lona'],['white', 'gray', 'camouflage', 'black'], [1, 1, 7, 2]):
     print(f"{name}'s color is {color} and they are {age} years old")
 
+"""
 
+# in
+print('j' in 'Maija')
 
+my_list = [5, 6, 7, 8, 9, 0, 4, 2, 6, 8]
 
+# min
+print(min(my_list))
+
+# max
+print(max(my_list))
+
+# sort
+my_list.sort()
+print('sorted')
+for number in my_list:
+    print(number)
+
+# shuffle
+from random import shuffle
+shuffle(my_list)
+print('shuffled')
+for number in my_list:
+    print(number)
+
+# Random number and
+from random import randint
+# user input
+end_of_range = input('enter a number')
+# convert string to number
+end_of_range = int(end_of_range)
+random_number = randint(0, end_of_range)
+print(random_number)
+
+# compound to one line
+print(randint(0, int(input('enter a number'))))
