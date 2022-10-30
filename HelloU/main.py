@@ -173,7 +173,7 @@ d = {'k1': 1, "k2": 2, "k3": 3, 'k4': 2}
 for key, value in d.items():
     if value == 2:
         print(key)
-"""
+
 # While loop
 
 x = 0
@@ -207,6 +207,13 @@ for letter in her_name:
         break
         print('*')
     print(letter)
-
+"""
+#Range
+for num in range(10):
+    print(num)
+for num in range(0, 10, 2):
+    print(num)
+print(range(10))
+print(list(range(10)))
 
 
