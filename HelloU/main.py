@@ -228,7 +228,7 @@ for index, letter in enumerate('Maija'):
 for name, color, age in zip(['Georges', 'Luna', 'Migo', 'Lona'],['white', 'gray', 'camouflage', 'black'], [1, 1, 7, 2]):
     print(f"{name}'s color is {color} and they are {age} years old")
 
-"""
+
 
 # in
 print('j' in 'Maija')
@@ -265,3 +265,46 @@ print(random_number)
 
 # compound to one line
 print(randint(0, int(input('enter a number'))))
+"""
+
+# Looping through and transforming lists
+#convert a strint to a list of its characters and print it
+my_list = [letter for letter in "Maija"]
+print(my_list)
+
+# make a list out ot a range and print it
+my_list = [number for number in range(0,11)]
+print(my_list)
+
+# Print even numbers in a range
+my_list = [number for number in range(0, 11) if number % 2 == 0]
+print(my_list)
+
+# Convert Celsius to fahrenheit and print the fahrenheit values
+celcius = [0, 10, 20, 34.5]
+fahrenheit = [((9 / 5) * temp + 32) for temp in celcius]
+for value in fahrenheit:
+    print(value)
+
+# Make one list in celsius and fahrenheit and print it formatted
+temperatures = zip(celcius, fahrenheit)
+print('print formatted')
+for c, f in temperatures:
+    print(f'{c}\'C, is {f} fahrenheit\n')
+print('formatted printed')
+
+# Nested loop in a list comprehension, to be avoided due to lack of readability
+
+# standard expanded double loop
+my_list= []
+for x in [2, 4, 6]:
+    for y in [10, 100, 1000]:
+        my_list.append(x * y)
+print(my_list)
+
+# now the same in list comprehension
+my_list = [x * y for x in [2, 4, 6] for y in [10, 100, 1000]]
+print(my_list)
+# a bit more extreme
+print([x * y for x in [2, 4, 6] for y in [10, 100, 1000]])
+
