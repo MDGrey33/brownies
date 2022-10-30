@@ -265,7 +265,6 @@ print(random_number)
 
 # compound to one line
 print(randint(0, int(input('enter a number'))))
-"""
 
 # Looping through and transforming lists
 #convert a strint to a list of its characters and print it
@@ -307,4 +306,13 @@ my_list = [x * y for x in [2, 4, 6] for y in [10, 100, 1000]]
 print(my_list)
 # a bit more extreme
 print([x * y for x in [2, 4, 6] for y in [10, 100, 1000]])
-
+"""
+for number in range(1, 100):
+    if number % 3 == 0 and number % 5 == 0:
+        print('FizzBuzz')
+    elif number % 3 == 0:
+        print('Fizz')
+    elif number % 5 == 0:
+        print('Buzz')
+    else:
+        print(number)
