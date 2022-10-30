@@ -306,7 +306,7 @@ my_list = [x * y for x in [2, 4, 6] for y in [10, 100, 1000]]
 print(my_list)
 # a bit more extreme
 print([x * y for x in [2, 4, 6] for y in [10, 100, 1000]])
-"""
+
 for number in range(1, 100):
     if number % 3 == 0 and number % 5 == 0:
         print('FizzBuzz')
@@ -316,3 +316,8 @@ for number in range(1, 100):
         print('Buzz')
     else:
         print(number)
+"""
+
+for word in 'print only the words that start with s in this sentence'.split():
+    if word[0] == 's':
+        print(word)
