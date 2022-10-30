@@ -215,12 +215,19 @@ for num in range(0, 10, 2):
     print(num)
 print(range(10))
 print(list(range(10)))
-"""
+
 
 # Enumerate
 
 for index, letter in enumerate('Maija'):
     print(f'at index {index}, we have the letter {letter} \n')
+
+"""
+# Zipping multiple lists/strings into a tuple
+
+for name, color, age in zip(['Georges', 'Luna', 'Migo', 'Lona'],['white', 'gray', 'camouflage', 'black'], [1, 1, 7, 2]):
+    print(f"{name}'s color is {color} and they are {age} years old")
+
 
 
 
