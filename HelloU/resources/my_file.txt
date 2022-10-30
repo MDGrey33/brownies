@@ -1,0 +1,3 @@
+Unless you have text
+in the file you are reading, you are
+the read function won't show anything

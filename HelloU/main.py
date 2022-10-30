@@ -65,8 +65,8 @@ print(my_set)
 my_set.add("apple")
 print(my_set)
 
-
-my_file = open('my_file.txt')
+"""
+my_file = open('resources/my_file.txt')
 print(my_file.read())
 my_file.seek(0)
 print(my_file.read())
@@ -75,26 +75,27 @@ my_file_lines = my_file.readlines()
 print(my_file_lines)
 
 
-with open('my_file.txt') as my_file:
-    content = my_file.read()
-    # print(content)
-    my_file.seek(0)
-    my_file_lines = my_file.readlines()
-    # print(my_file_lines)
-
-with open('my_file.txt', mode='r') as my_file:
+with open('resources/my_file.txt') as my_file:
     content = my_file.read()
     print(content)
     my_file.seek(0)
     my_file_lines = my_file.readlines()
     print(my_file_lines)
 
-with open('my_new_file.txt', mode='a') as my_file:
-    my_file.write('\nSIX ON SIXTH')
+with open('resources/my_file.txt', mode='r') as my_file:
+    content = my_file.read()
+    print(content)
+    my_file.seek(0)
+    my_file_lines = my_file.readlines()
+    print(my_file_lines)
 
-with open('my_file_lines.txt', mode='w') as my_file:
+with open('resources/my_new_file.txt', mode='a') as my_file:
+    my_file.write('\nThis is an appended line that will appear often')
+
+with open('resources/my_file_lines.txt', mode='w') as my_file:
     my_file.write('I just deleted the old file and made a new one with this text')
 
+"""
 print('2' == 2)
 print('2' != 2)
 print(2 <= 2)
@@ -102,7 +103,6 @@ print(2 < 2)
 
 print(2 == 2 and 2 > 1)
 print(2 == 2 > 1)
-"""
 
 # If elif and else statements
 
@@ -132,3 +132,5 @@ else:
 
 
 
+
+"""
