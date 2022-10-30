@@ -65,7 +65,9 @@ print(my_set)
 my_set.add("apple")
 print(my_set)
 
-"""
+# IO file manipulation
+
+# Reading files
 my_file = open('resources/my_file.txt')
 print(my_file.read())
 my_file.seek(0)
@@ -74,6 +76,7 @@ my_file.seek(0)
 my_file_lines = my_file.readlines()
 print(my_file_lines)
 
+# Cleaner way for reading files
 
 with open('resources/my_file.txt') as my_file:
     content = my_file.read()
@@ -89,13 +92,16 @@ with open('resources/my_file.txt', mode='r') as my_file:
     my_file_lines = my_file.readlines()
     print(my_file_lines)
 
+# Appending files
 with open('resources/my_new_file.txt', mode='a') as my_file:
     my_file.write('\nThis is an appended line that will appear often')
 
+# Writing Files
 with open('resources/my_file_lines.txt', mode='w') as my_file:
     my_file.write('I just deleted the old file and made a new one with this text')
 
-"""
+
+# Comparison operators
 print('2' == 2)
 print('2' != 2)
 print(2 <= 2)
@@ -127,10 +133,4 @@ elif loc == 'Store':
     print("Welcome to the store!")
 else:
     print("I do not know much!")
-
-
-
-
-
-
 """
