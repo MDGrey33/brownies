@@ -321,7 +321,7 @@ for number in range(1, 100):
 for word in 'Sam print only the words that start with s in this sentence'.split():
     if word[0].lower() == 's':
         print(word)
-"""
+
 for number in range(11):
     if number % 2 == 0:
         print(number)
@@ -337,3 +337,19 @@ divider = int(input('type multiplier '))
 for number in range(range_min, (range_max + 1)):
     if number % divider == 0:
         print(number)
+"""
+# Working with functions
+
+
+def say_hello_to(name = 'Anonymous'):
+    print(f'hello {name}')
+
+
+say_hello_to('Maija')
+
+
+def add(num_one = 0, num_two = 0):
+    return num_one + num_two
+
+
+print(add(1, 8))
