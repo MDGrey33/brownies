@@ -337,7 +337,6 @@ divider = int(input('type multiplier '))
 for number in range(range_min, (range_max + 1)):
     if number % divider == 0:
         print(number)
-"""
 # Working with functions
 
 
@@ -353,3 +352,20 @@ def add(num_one = 0, num_two = 0):
 
 
 print(add(1, 8))
+"""
+from _testcapi import MyList
+
+
+def return_even_numbers(the_list):
+    even_numbers = []
+    for number in the_list:
+        if number % 2 == 0:
+            even_numbers.append(number)
+        else:
+            pass
+    return even_numbers
+
+
+my_list = [1, 2, 3, 5, 6, 7]
+
+print(return_even_numbers(my_list))
