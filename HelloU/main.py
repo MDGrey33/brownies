@@ -45,7 +45,7 @@ print(f"{cats_list} \n {sorted_list}")
 cat_dic = {'Luna': 'I will thief the hell out of your food',
            'George': 'Move let me sleep',
            'Lona': 'I pee on the toilet seat!, bitch!'}
-print(cat_dic['Lona'])
+print(cat_dic['Luna'])
 cat_dic['Migo'] = 'I shall take care of you weeklings, I mean you too human!'
 print(cat_dic)
 cat_dic.pop('Migo')
@@ -352,8 +352,6 @@ def add(num_one = 0, num_two = 0):
 
 
 print(add(1, 8))
-"""
-from _testcapi import MyList
 
 
 def return_even_numbers(the_list):
@@ -369,3 +367,62 @@ def return_even_numbers(the_list):
 my_list = [1, 2, 3, 5, 6, 7]
 
 print(return_even_numbers(my_list))
+"""
+"""
+
+
+# unpacking tuples in functions
+
+def get_price(stock_prices, stock_requested):
+    for stock, price in stock_prices:
+        if stock == stock_requested:
+            return price
+
+
+def get_most_expensive(stock_price_list):
+    highyest_price = 0
+    for stock, price in stock_price_list:
+        if highyest_price < price:
+            highyest_price = price
+            most_expensive = stock
+    return most_expensive, highyest_price
+
+
+stock_prices = [('APPL', 200), ('GOOG', 400), ('MSFT', 100)]
+
+
+print(get_price(stock_prices, 'MSFT'))
+
+stock, price = get_most_expensive(stock_prices)
+print(f'The most expensive stock is {stock}, it stands at {price}')
+
+
+"""
+
+
+# Shuffle game
+
+def shuffle_list():
+    my_list = ['', 'O', '']
+    shuffle(my_list)
+    return my_list
+
+
+def player_guess():
+    guess = ''
+    while guess not in ['0', '1', '2']:
+        guess = input('chose a number 0, 1 or 2')
+    else:
+        return guess
+
+
+def check_guess(guess_number):
+    result = shuffle_list()
+    if result[guess_number] == 'O':
+        return 'Good guess', result
+    else:
+        return 'Better luck next time', result
+
+
+guess = int(player_guess())
+print(check_guess(guess))
