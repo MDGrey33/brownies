@@ -367,8 +367,6 @@ def return_even_numbers(the_list):
 my_list = [1, 2, 3, 5, 6, 7]
 
 print(return_even_numbers(my_list))
-"""
-"""
 
 
 # unpacking tuples in functions
@@ -397,9 +395,9 @@ stock, price = get_most_expensive(stock_prices)
 print(f'The most expensive stock is {stock}, it stands at {price}')
 
 
-"""
 
 
+from random import shuffle
 # Shuffle game
 
 def shuffle_list():
@@ -411,7 +409,7 @@ def shuffle_list():
 def player_guess():
     guess = ''
     while guess not in ['0', '1', '2']:
-        guess = input('chose a number 0, 1 or 2')
+        guess = input('chose a number 0, 1, or 2')
     else:
         return guess
 
@@ -426,3 +424,38 @@ def check_guess(guess_number):
 
 guess = int(player_guess())
 print(check_guess(guess))
+
+"""
+
+# Passing an undefined amount of arguments
+
+
+def my_func(*args):
+    for item in args:
+        print(item)
+
+
+print(my_func(5, 1000, 5, 7))
+
+
+# passing undefined amount of keyword arguments
+def my_new_func(**kwargs):
+    if 'fruit' in kwargs:
+        print('My fruit of choice is {}'.format(kwargs['fruit']))
+    else:
+        print("I didn't find any fruits here")
+    print(kwargs)
+
+
+my_new_func(fruit="apple", vegie='carrot')
+
+# Passing Arguments and Keyword arguments
+
+
+def my_real_func(*args, **kwargs):
+    print(args)
+    print(kwargs)
+    print('I would like {} {}'.format(args[0],kwargs['fruit']))
+
+
+my_real_func(10, 20, 30, fruit="apple", vegie='carrot')
