@@ -425,7 +425,7 @@ def check_guess(guess_number):
 guess = int(player_guess())
 print(check_guess(guess))
 
-"""
+
 
 # Passing an undefined amount of arguments
 
@@ -444,7 +444,7 @@ def my_new_func(**kwargs):
         print('My fruit of choice is {}'.format(kwargs['fruit']))
     else:
         print("I didn't find any fruits here")
-    print(kwargs)
+    # print(kwargs)
 
 
 my_new_func(fruit="apple", vegie='carrot')
@@ -453,9 +453,21 @@ my_new_func(fruit="apple", vegie='carrot')
 
 
 def my_real_func(*args, **kwargs):
-    print(args)
-    print(kwargs)
+#    print(args)
+#    print(kwargs)
     print('I would like {} {}'.format(args[0],kwargs['fruit']))
 
 
 my_real_func(10, 20, 30, fruit="apple", vegie='carrot')
+
+"""
+# exercise print even numbers of an undefined number of Arguments
+
+
+def myfunc(*args):
+    for number in args:
+        if number % 2 == 0:
+            print(number)
+
+
+myfunc(5, 6, 7, 8)
