@@ -460,7 +460,6 @@ def my_real_func(*args, **kwargs):
 
 my_real_func(10, 20, 30, fruit="apple", vegie='carrot')
 
-"""
 # exercise print even numbers of an undefined number of Arguments
 
 
@@ -471,3 +470,211 @@ def myfunc(*args):
 
 
 myfunc(5, 6, 7, 8)
+"""
+
+"""
+# Exercise Lesser of two evens
+
+
+def lesser_of_two_events(a, b):
+    if a % 2 == 0 and b % 2 == 0:
+        return min(a, b)
+    else:
+        return max(a, b)
+
+
+print(lesser_of_two_events(10, 4))
+
+
+
+
+# Exercise Animal crackers
+
+
+def animal_crackers( word_list):
+    word_list = word_list.lower().split()
+    return word_list[0][0] == word_list[1][0]
+
+
+print(animal_crackers('samir Selim'))
+
+
+# Makes twenty
+
+
+def makes_twenty(a, b):
+    return a == 20 or b == 20 or a + b == 20
+
+
+print(makes_twenty(20, 5))
+
+print(makes_twenty(0, 20))
+
+print(makes_twenty(10, 10))
+
+print(makes_twenty(10, 11))
+
+
+# Capitalize first and 3rd letter
+
+
+def old_mcdonald(my_text):
+    return my_text[:3].capitalize() + my_text[3:].capitalize()
+
+
+print(old_mcdonald("macdonalds"))
+
+
+
+
+# Master Yoda
+
+
+def master_yoda(word_list):
+    word_list = word_list.split()
+    word_list.insert(0, word_list[-1].capitalize())
+    word_list[1] = word_list[1].lower()
+    # word_list.pop()
+    word_list = " ".join(word_list)
+    print(word_list)
+
+
+master_yoda('You must eat')
+
+
+# Exercise Almost there, returns almost there if within 10 from 100 or 200 with test suite
+
+
+def almost_there(my_number):
+    return abs(100-my_number) <= 10 or abs(200-my_number) <= 10
+
+
+if almost_there(90) and almost_there(91) and almost_there(100) \
+        and almost_there(101) and almost_there(110) \
+        and almost_there(20) == False and almost_there(121) == False:
+    print('100 test suite passed')
+else:
+    print('Test failed')
+
+
+
+
+# has_33 checks if the number 3 comes up twice
+
+
+def has_33(my_numbers):
+    x = '-'
+    for this_number in my_numbers:
+        # print(x, this_number)
+        if this_number == 33 or x == 3 and this_number == 3:
+            return True
+        x = this_number
+    return False
+
+
+print(has_33([1, 3, 3]))
+print(has_33([1, 3, 1, 3]))
+print(has_33([3, 1, 3]))
+
+
+# has_33 another way
+
+
+def has_33_also(my_numbers):
+    for i in range(0, len(my_numbers)-1):
+        print(my_numbers[i], my_numbers[i+1])
+        if my_numbers[i] == 3 and my_numbers[i+1] == 3 or my_numbers[i] == 33:
+            return True
+    return False
+
+
+def has_33_sliced(my_numbers):
+    for i in range(0, len(my_numbers)-1):
+        print(my_numbers[i], my_numbers[i+1])
+        if my_numbers[i:i+2] == [3, 3]:
+            return True
+    return False
+
+print(has_33_also([1, 3, 3]))
+print(has_33_also([1, 3, 1, 3]))
+print(has_33_also([3, 1, 3]))
+print(has_33_also([33, 1, 3]))
+
+
+
+
+# Paper doll exercise
+
+
+def paper_doll(text):
+    result = ''
+    for letter in text:
+        result += letter * 3
+    return result
+
+
+print(paper_doll('Maija'))
+
+
+
+# Blackjack
+# given 3 integers between 1 and 11
+# if their sum is less than or equal to 21:
+#       return their sum
+# if their sum exceeds 21 and there is an 11
+#       reduce the total sum by 10
+# If the sum after adjustment is still above 21 return Bust
+# else return their sum
+
+
+def print_sum(total):
+    print(total)
+
+
+def check_bust(total):
+    if total > 21:
+        total = 'Bust!!!'
+    print_sum(total)
+
+
+def adjust(my_cards, total):
+    for card in my_cards:
+        if card == 11:
+            total -= 10
+            break
+    check_bust(total)
+
+
+def check(my_cards):
+    total = 0
+    for number in my_cards:
+        total += number
+    if total <= 21:
+        print_sum(total)
+    else:
+        adjust(my_cards, total)
+
+
+# commented to test manual input
+
+check([11, 10, 0])
+"""
+
+# Allow the user to manually input the my_cards
+# Randomly chose the users cards
+
+
+# test 1 line evaluation of confition
+john = 14
+above_age = john >= 18
+
+
+def store_response(response):
+    print(response)
+
+
+store_response('Allowed') if above_age else store_response('Denied')
+
+
+
+
