@@ -81,7 +81,8 @@ print(new_tuple)
 print(new_list.pop())
 
 # SETS are unique
-print(1==2)"""
+print(1==2)
+
 myfile = open('myfile.txt')
 print(myfile.read())
 print(myfile.read()) #does not print because the file is already read and the cursor is at the end
@@ -106,3 +107,4 @@ with open('my_new_file.txt', mode='a') as f:
 with open('my_new_file.txt',mode='r') as myfile: # modes: a-append, w-overwrites, r-read
     contents = myfile.read()
     print(contents)
+"""
