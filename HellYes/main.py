@@ -108,5 +108,91 @@ with open('my_new_file.txt',mode='r') as myfile: # modes: a-append, w-overwrites
     contents = myfile.read()
     print(contents)
 """
-
+"""
 # testing commits form Pycharm
+is_magician = True
+is_expert = False
+
+if is_magician and is_expert:
+    print('You are master magician')
+
+elif is_magician and not is_expert:
+    print('At least you\'re getting there')
+
+elif not is_magician:
+    print('you need magic powers')
+
+#print('1' is '0')
+
+# FOR LOOPS
+for item in (1,2,3,4,5):
+    for x in ['a','b','c']:
+        print(item, x)
+
+#iterable - list, dict, tuple, set, string
+#iterate --> one by one check each item in the collection
+user = {
+    'name' : 'Golem',
+    'age' : 5000
+}
+
+for item in user.values():
+    print(item)
+
+for item in user.keys():
+    print(item)
+
+for item in user.items():
+    print(item)
+
+for key, value in user.items():
+    print(key, value)
+
+#Exercise counter
+my_list = [1,2,3,4,5,6,7,8,9,10]
+
+counter = 0
+for item in my_list:
+    counter += item
+print(counter)
+
+#Range - creates range. range(start,stop,step)
+for number in range(0,10,2):
+    print(number)
+
+#enumerate - gives index and item
+for i,char in enumerate('Helllloooo'):
+    print(i,char)
+
+for i,char in enumerate(list(range(1,100))):
+    if char == 50:
+        print(f'index of {char} is: {i}')
+
+# While loop
+i = 0
+while i<50:
+    print(i)
+    i += 1
+else:
+    print('done with all the work')
+
+while i<50:
+    print(i)
+    break # loop stops when seeing break
+
+while True:
+    response = input('say something: ')
+    if (response == 'bye'):
+        break
+
+"""
+
+# break, continue, pass
+# continue - goes back to the start of the loop
+# pass - does nothing - passes to the next line. useful as a placeholder
+
+new_list = [1,2,3]
+for item in new_list:
+    #thinking about it
+    pass
+
