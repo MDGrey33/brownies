@@ -664,7 +664,7 @@ check([11, 10, 0])
 # Randomly chose the users cards
 
 
-# test 1 line evaluation of confition
+# test 1 line evaluation of condition
 john = 14
 above_age = john >= 18
 
