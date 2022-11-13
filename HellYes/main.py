@@ -108,3 +108,5 @@ with open('my_new_file.txt',mode='r') as myfile: # modes: a-append, w-overwrites
     contents = myfile.read()
     print(contents)
 """
+
+# testing commits form Pycharm
