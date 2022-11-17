@@ -549,13 +549,39 @@ def almost_there(my_number):
     return abs(100-my_number) <= 10 or abs(200-my_number) <= 10
 
 
-if almost_there(90) and almost_there(91) and almost_there(100) \
-        and almost_there(101) and almost_there(110) \
-        and almost_there(20) == False and almost_there(121) == False:
-    print('100 test suite passed')
-else:
-    print('Test failed')
+def test_suite(true_assertions, false_assertions):
+    # Defining defaults
+    result = "Test failed to run"
+    test_count = 0
 
+    # Testing true assertions
+    for number in true_assertions:
+        if almost_there(number):
+            print(f'Test for {number} passed')
+            test_count += 1
+        else: 
+            print(f'Test for {number} failed')
+            break
+
+    # Testing false assertions.
+    for number in false_assertions:
+        if not almost_there(number):
+            print(f'Test for {number} passed')
+            test_count += 1
+        else:
+            print(f'Test for {number} failed')
+            break
+    # Validating that all tests ran as expected
+    test_count_expected = (len(true_assertions) + len(false_assertions))
+    if test_count == test_count_expected:
+        print(f'{test_count} / {test_count_expected} passed')
+        result = "Test completed successfully"
+    print(result)
+
+
+true_test_cases = (90, 91, 100, 101, 110, 190, 191, 200, 201, 210)
+false_test_cases = (89, 111, 189, 211)
+test_suite(true_test_cases, false_test_cases)
 
 
 
@@ -575,7 +601,6 @@ def has_33(my_numbers):
 print(has_33([1, 3, 3]))
 print(has_33([1, 3, 1, 3]))
 print(has_33([3, 1, 3]))
-
 
 # has_33 another way
 
@@ -658,7 +683,7 @@ def check(my_cards):
 # commented to test manual input
 
 check([11, 10, 0])
-"""
+
 
 # Allow the user to manually input the my_cards
 # Randomly chose the users cards
@@ -674,7 +699,7 @@ def store_response(response):
 
 
 store_response('Allowed') if above_age else store_response('Denied')
-
+"""
 
 
 
