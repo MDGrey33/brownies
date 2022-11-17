@@ -470,9 +470,7 @@ def myfunc(*args):
 
 
 myfunc(5, 6, 7, 8)
-"""
 
-"""
 # Exercise Lesser of two evens
 
 
@@ -699,7 +697,34 @@ def store_response(response):
 
 
 store_response('Allowed') if above_age else store_response('Denied')
+
+# gource -f -960x540 --disable-progress --seconds-per-day 0.01 --auto-skip-seconds 0.1 --stop-on-idle --title Toptal --file-idle-time 0 --hide filenames,dirnames,progress --start-position 0.5 --output-ppm-stream - | ffmpeg -y -r 30 -f image2pipe -vcodec ppm -i - -vcodec libx264 -preset ultrafast -pix_fmt yuv420p -crf 1 -threads 0 -bf 0 ~/Desktop/billing.mp4
+
 """
+
+
+def find_the_spy(population):
+    code = [0, 0, 7, 'spy']
+    for citizen in population:
+        if citizen == code[0]:
+            code.pop(0)
+    return len(code) == 1
+
+
+def inspect_population(population):
+    for city in population:
+        print(f'Inspecting {city}')
+        if find_the_spy(population[city]):
+            print('Spy found')
+        else:
+            print('No need for suspicion')
+
+
+population_baltics = {'Riga': [1, 2, 4, 0, 0, 7, 5], 'Tallin': [1, 0, 2, 4, 0, 5, 7], 'Vilnius': [1, 7, 2, 0, 4, 5, 0]}
+population_germany = {'Berlin': [1, 2, 4, 0, 0, 7, 5], 'Munich': [1, 0, 2, 4, 0, 5, 7], 'Cologne': [1, 0, 0, 7, 2, 0, 4, 5, 0]}
+
+inspect_population(population_baltics)
+inspect_population(population_germany)
 
 
 
