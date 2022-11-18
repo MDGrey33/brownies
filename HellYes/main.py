@@ -185,7 +185,88 @@ while True:
     if (response == 'bye'):
         break
 
-"""
+
+#BASICS2
+
+#Conditional logic
+is_old = True
+is_licenced = True
+is_eligible = False
+
+
+if is_old:
+    print('you are old enough to drive')
+elif is_licenced:
+    print('you can drive now')
+else:
+    print('checheck')
+if is_old and is_licenced and is_eligible:
+    print('you can drive')
+else:
+    print('you cannot drive')
+#FUNCTIONS either modifys something or returns something
+def say_hello():
+    print('Hellloooooo')
+# Arguments vs parameters
+# parameters are name of the variables function receives
+def say_hello(name, emoji):
+    print(f'Hellloooooo {name} {emoji}')
+# arguments are actual values you pass to the function
+say_hello('Leo', ':)')
+# keyword arguments
+say_hello(emoji=':)', name='Bibi')
+# default parameters
+def say_hello2(name='Darth Vader', emoji=':O'):
+    print(f'Hellloooooo {name} {emoji}')
+say_hello2()
+say_hello2('Yoda')
+# return - automatically exits the function
+def summa(num1, num2):
+    return num1 + num2
+    print('This will not be printed')
+print(summa(4,5))
+total = summa(10,5)
+print(total)
+#Exercise TESLA
+def checkDriverAge(age = 0):
+    if age < 18:
+        text = print('Sorry, not old enough to drive')
+    elif age > 18:
+        text = print('Powering on!')
+    elif age == 18:
+        text = print('Congratulations on your first year of driving!')
+    return text
+checkDriverAge(15)
+# Methods vs Functions
+# methods - a set of instructions that are associated with object
+# functions - a set of instructions that perform a task
+# Docstrings
+def test(a):
+'''
+#    Info: this function tests and prints param a 
+'''
+    print(a)
+test('blablahblah')
+help(test)
+print(test.__doc__)
+# *args **kwargs
+# *args lets you pass any number of arguments
+# **kwargs - keyword arguments
+def super_func(*args, **kwargs):
+    print(kwargs)
+    return sum(args) 
+print(super_func(1,2,3,4,5, num1=5, num2=10))
+#Rule: params, *args, default parameters, **kwargs
+'''
+#Exercise - return highest even number in the list
+def highest_even(li):
+    evens = []
+    for i in li:
+        if i % 2 == 0:
+            evens.append(i)
+    return max(evens)
+
+print(highest_even([10,2,3,4,5,13]))
 
 # break, continue, pass
 # continue - goes back to the start of the loop
@@ -196,3 +277,4 @@ for item in new_list:
     #thinking about it
     pass
 
+"""
