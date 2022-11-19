@@ -817,3 +817,4 @@ my_numbers = [1, 2, 3, 4, 5]
 
 print(list(map(lambda number: number ** 2, my_numbers)))
 
+print(list(filter(lambda number: number % 2 == 0, my_numbers)))
