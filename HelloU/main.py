@@ -793,7 +793,6 @@ def the_oldest(age_competitors):
 
 competitors = (cat_one, cat_two, cat_three)
 print(f'{the_oldest(competitors).name} is {the_oldest(competitors).age} years old and he is the oldest cat in town')
-"""
 
 
 def square(number):
@@ -803,3 +802,15 @@ def square(number):
 my_numbers = [1, 2, 3, 4, 5, 6]
 squared_list = list(map(square, my_numbers))
 print(squared_list)
+
+
+"""
+
+
+def is_even(number):
+    return number % 2 == 0
+
+
+numbers_list = [1, 2, 3, 4, 5, 6, 7, 8]
+
+print(list(filter(is_even, numbers_list)))
