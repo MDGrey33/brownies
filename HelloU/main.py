@@ -700,7 +700,7 @@ store_response('Allowed') if above_age else store_response('Denied')
 
 # gource -f -960x540 --disable-progress --seconds-per-day 0.01 --auto-skip-seconds 0.1 --stop-on-idle --title Toptal --file-idle-time 0 --hide filenames,dirnames,progress --start-position 0.5 --output-ppm-stream - | ffmpeg -y -r 30 -f image2pipe -vcodec ppm -i - -vcodec libx264 -preset ultrafast -pix_fmt yuv420p -crf 1 -threads 0 -bf 0 ~/Desktop/billing.mp4
 
-"""
+
 
 
 def find_the_spy(population):
@@ -727,4 +727,43 @@ inspect_population(population_baltics)
 inspect_population(population_germany)
 
 
+# OOP
 
+
+# class
+class BigObject:
+    pass
+
+
+# Instantiate
+object1 = BigObject()
+
+print(type(object1))
+"""
+
+
+class PlayerCharacter:
+    # Class object attribute
+    membership = True
+
+    def __init__(self, name='anonymous', age=0):
+        if age > 18:
+            self.name = name
+            # Attribute
+            self.age = age
+
+    def shout(self):
+        print(f'My name is {self.name}')
+        return 'done'
+
+
+player1 = PlayerCharacter('Maija', 22)
+player2 = PlayerCharacter('Roland', 33)
+player2.attack = 50
+
+player1.shout()
+player2.shout()
+print(player2.attack)
+
+print(player1)
+print(player2.membership)
