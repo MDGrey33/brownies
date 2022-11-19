@@ -766,7 +766,7 @@ print(player2.attack)
 
 print(player1)
 print(player2.membership)
-"""
+
 
 
 class Cat:
@@ -793,3 +793,13 @@ def the_oldest(age_competitors):
 
 competitors = (cat_one, cat_two, cat_three)
 print(f'{the_oldest(competitors).name} is {the_oldest(competitors).age} years old and he is the oldest cat in town')
+"""
+
+
+def square(number):
+    return number ** 2
+
+
+my_numbers = [1, 2, 3, 4, 5, 6]
+squared_list = list(map(square, my_numbers))
+print(squared_list)
