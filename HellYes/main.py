@@ -446,7 +446,7 @@ print(is_pangram("the quick brown fox jumps over a lazy dog"))
 
 def is_pangram2(str1):
     alphabet = string.ascii_lowercase
-    return sorted(list(set(list(str1.replace(" ",""))))) == sorted(list(alphabet))
+    return sorted(list(set(str1.replace(" ","")))) == list(alphabet)
 
-sentence = "the quick brown fox jumps over a lazy dog"
+sentence = "the quick bbrown fox jumps over a lazy dog"
 print(is_pangram2(sentence))
