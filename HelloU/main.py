@@ -739,8 +739,6 @@ class BigObject:
 object1 = BigObject()
 
 print(type(object1))
-"""
-
 
 class PlayerCharacter:
     # Class object attribute
@@ -763,7 +761,35 @@ player2.attack = 50
 
 player1.shout()
 player2.shout()
+
 print(player2.attack)
 
 print(player1)
 print(player2.membership)
+"""
+
+
+class Cat:
+    species = 'mammal'
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+cat_one = Cat('Leo', 4)
+cat_two = Cat('Luna', 2)
+cat_three = Cat('George', 2)
+
+
+def the_oldest(age_competitors):
+    oldest_cat = Cat('anonymous', 0)
+
+    for this_cat in age_competitors:
+        if this_cat.age > oldest_cat.age:
+            oldest_cat = this_cat
+    return oldest_cat
+
+
+competitors = (cat_one, cat_two, cat_three)
+print(f'{the_oldest(competitors).name} is {the_oldest(competitors).age} years old and he is the oldest cat in town')
