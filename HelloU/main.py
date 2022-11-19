@@ -804,9 +804,6 @@ squared_list = list(map(square, my_numbers))
 print(squared_list)
 
 
-"""
-
-
 def is_even(number):
     return number % 2 == 0
 
@@ -814,3 +811,9 @@ def is_even(number):
 numbers_list = [1, 2, 3, 4, 5, 6, 7, 8]
 
 print(list(filter(is_even, numbers_list)))
+
+"""
+my_numbers = [1, 2, 3, 4, 5]
+
+print(list(map(lambda number: number ** 2, my_numbers)))
+
