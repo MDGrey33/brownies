@@ -812,9 +812,118 @@ numbers_list = [1, 2, 3, 4, 5, 6, 7, 8]
 
 print(list(filter(is_even, numbers_list)))
 
-"""
 my_numbers = [1, 2, 3, 4, 5]
 
 print(list(map(lambda number: number ** 2, my_numbers)))
 
 print(list(filter(lambda number: number % 2 == 0, my_numbers)))
+
+x = 50
+
+
+def think_global():
+    global x
+    print(x)
+    x += 1
+    print(x)
+
+
+think_global()
+print(x)
+
+# calculate the radius
+import math
+import string
+from curses.ascii import islower, isupper
+
+
+def vol(rad):
+    return 4 / 3 * math.pi * (rad ** 3)
+
+
+print(vol(2))
+
+
+# Check number in boundaries
+
+
+def ran_check(num, low, high):
+    return low <= num <= high
+
+
+print(ran_check(77, 3, 7))
+
+
+# Count upper case and lowercase
+
+
+def up_low(text):
+    upper = 0
+    lower = 0
+    for letter in text:
+        if isupper(letter):
+            upper += 1
+        elif islower(letter):
+            lower += 1
+    print(f'upper {upper} \nlower {lower}')
+
+
+s = 'Hello Mr. Rogers, how are you this fine Tuesday?'
+
+up_low(s)
+print(len(s))
+
+
+# return unique list
+
+
+def unique_list(lst):
+    print(list(set(lst)))
+
+
+unique_list([1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 5])
+
+
+def multiply(numbers):
+    total = 1
+    for number in numbers:
+        total *= number
+    print(total)
+
+
+multiply(([1, 2, 3, -4]))
+
+
+# Palindrome
+
+
+def palindrome(the_sentence):
+    return the_sentence.replace(' ', '')[::-1] == the_sentence.replace(' ', '')
+
+
+sentence = 'nurses run'
+sentence = 'helleh'
+sentence = 'nurses do run'
+
+
+print(palindrome(sentence))
+
+"""
+
+# Pangram
+import string
+
+
+def is_pangram(sentence):
+    new_sentence = ''
+    for letter in ''.join(sorted(set(sentence.lower()))):
+        if letter.isalpha():
+            new_sentence += letter
+    return new_sentence == string.ascii_lowercase
+
+
+the_sentence = "bbc adefgh ijklmn gooppdqerrsgguvt xry w  z"
+the_sentence2 = 'The quick brown fox jumps over a lazy dog!'
+the_sentence3 = 'the quick brown fox jumps over a lazy do!'
+
+print(is_pangram(the_sentence2))
