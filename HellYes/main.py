@@ -108,6 +108,8 @@ with open('my_new_file.txt',mode='r') as myfile: # modes: a-append, w-overwrites
     contents = myfile.read()
     print(contents)
 """
+import math
+
 """
 # testing commits form Pycharm
 is_magician = True
@@ -338,7 +340,6 @@ def oldest(cats):
 competitors = (Leo, Luna, George)
 print(oldest(competitors))
 
-"""
 # map
 def square(n):
     return n ** 2 # n*n (squared)
@@ -350,3 +351,102 @@ for item in map(square, my_nums):
 squared_list = list(map(square, my_nums))
 print(squared_list)
 
+#filter function
+def check_even(num):
+    return num%2 == 0
+
+mynums = [1,2,3,4,5,6,7,8,9,56,73,18]
+even_list = list(filter(check_even, mynums))
+print(even_list)
+
+
+# Lambda - anonymous function. Usually use it once
+def square(n):
+    return n ** 2 # n*n (squared)
+
+lambda_square = lambda num: num ** 2
+
+print(square(3))
+print(lambda_square(3))
+
+my_numbers = [1,2,4,5,6]
+print(list(map(lambda num: num**2, my_numbers)))
+
+lambda_evens = lambda num: num%2 == 0
+print(list(filter(lambda num: num%2 == 0, my_numbers)))
+
+#print(list(filter(lambda_evens, my_numbers)))
+
+print(lambda_evens(6))
+
+"""
+# checks sphere's volume with a given radius
+def vol(rad):
+    return 4/3 * rad**3 * math.pi
+
+print(vol(2))
+
+# check if the number is in given range
+def ran_check(num,low,high):
+    return low <= num <= high
+
+print(ran_check(5,2,7))
+print(ran_check(3,5,8))
+
+# accepts a string and calculates how many uppercase and lower case letters there are
+def up_low(s):
+    upper_count = 0
+    lower_count = 0
+    for letter in s:
+        if letter in (" ", ".", "!", "?", ",", ":", "-"):
+            continue
+        if letter == letter.upper():
+            upper_count += 1
+        else:
+            lower_count += 1
+    print(f"There are {upper_count} uppercase letters and {lower_count} lowercase letters")
+
+up_low("Hi you!")
+
+#return unique list
+def unique_list(lst):
+    return list(set(lst))
+
+
+print(unique_list([1,1,2,3,4,5,5,5,7]))
+
+# multiply all numbers in list
+def multiply(numbers):
+    multiplication = 1
+    for num in numbers:
+        multiplication = num * multiplication
+    return multiplication
+
+
+print(multiply([1,2,3,-4]))
+
+# find if the given name is a palindrome
+name = "Maija S"
+print(name[::-1])
+print(name.replace(' ', ''))
+
+
+def palindrome(name):
+    return name.replace(' ','') == name.replace(' ','')[::-1]
+
+print(palindrome("nurses run"))
+
+# find if the sentence provided is pangram
+
+import string
+def is_pangram(str1, alphabet=string.ascii_lowercase):
+    return len(set(list(str1.replace(" ","")))) == 26
+
+print(is_pangram("the quick brown fox jumps over a lazy dog"))
+
+def is_pangram2(str1):
+    alphabet = string.ascii_lowercase
+    return sorted(list(set(list(str1.replace(" ",""))))) == sorted(list(alphabet))
+
+sentence = "the quick brown fox jumps over a lazy dog"
+print(is_pangram2(sentence))
