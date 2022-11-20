@@ -379,7 +379,7 @@ print(list(filter(lambda num: num%2 == 0, my_numbers)))
 
 print(lambda_evens(6))
 
-"""
+
 # checks sphere's volume with a given radius
 def vol(rad):
     return 4/3 * rad**3 * math.pi
@@ -448,5 +448,58 @@ def is_pangram2(str1):
     alphabet = string.ascii_lowercase
     return sorted(list(set(str1.replace(" ","")))) == list(alphabet)
 
-sentence = "the quick bbrown fox jumps over a lazy dog"
+sentence = "The quick bbrown fox jumps over a lazy dog"
 print(is_pangram2(sentence))
+
+"""
+
+# displaying information
+
+print([1,2,3])
+print([4,5,6])
+print([7,8,9])
+def display(row1,row2,row3):
+    print(row1)
+    print(row2)
+    print(row3)
+
+row1 = [' ', ' ', ' ']
+row2 = [' ', ' ', ' ']
+row3 = [' ', ' ', ' ']
+
+row2[1]='X'
+
+display(row1,row2,row3)
+
+#user input
+#result = input("Please enter a value: ")
+#int_result = int(result)
+
+#validating user input
+def user_choice():
+    #initial
+    acceptable_range = range(0,10)
+    within_range = False
+    choice = 'WRONG'
+    while choice.isdigit() == False or within_range == False:
+
+        choice = input("Please enter a number: ")
+
+        #digit check
+        if choice.isdigit() == False:
+            print("Sorry, that's not a digit")
+
+        # range check
+        if choice.isdigit() == True:
+            if int(choice) in acceptable_range:
+                within_range = True
+            else:
+                print("Number not in range (0-10)")
+                #within_range = False
+
+    return int(choice)
+
+user_choice()
+
+
+
