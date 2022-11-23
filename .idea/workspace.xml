@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a2e811bb-f75e-40d2-8b4d-b3b02f727efd" name="Changes" comment="# Pangram, reduce a string to its unique letters">
+      <change beforePath="$PROJECT_DIR$/HellYes/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/HellYes/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HellYes/myfile.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="799fda81-b754-4abc-adc0-ccdccf51ca57" />
+        <option name="url" value="https://github.com/MDGrey33/brownies.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2GourTnqj4l1nhlVQFGGE2xaPgy" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/roland/code/brownies&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/HelloU" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/HelloU/resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="brownies" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/HelloU" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HelloU/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a2e811bb-f75e-40d2-8b4d-b3b02f727efd" name="Changes" comment="" />
+      <created>1667067456929</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667067456929</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Updated .gitignore to include environment configuration and many other items that are usually recommended to ignore.">
+      <created>1667132168846</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667132168846</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Moved the IO files into resourece/ folder and refactored the code using the pycharm refactor function">
+      <created>1667133665403</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667133665403</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added comments to I/O &amp; Comparison operators">
+      <created>1667133948332</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667133948332</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Looping through lists">
+      <created>1667140423193</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667140423193</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Looping through Tuples">
+      <created>1667140869862</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667140869862</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Looping through Tuples">
+      <created>1667140883182</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1667140883182</updated>
+    </task>
+    <task id="LOCAL-00007" summary="# unpacking a dictionary to find keys with a specific value">
+      <created>1667142269698</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667142269698</updated>
+    </task>
+    <task id="LOCAL-00008" summary="# While loop&#10;# pass, continue and break">
+      <created>1667143662253</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1667143662253</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Range exercise">
+      <created>1667145923357</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1667145923357</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Enumerate exercise">
+      <created>1667146653264</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1667146653264</updated>
+    </task>
+    <task id="LOCAL-00011" summary="# Zipping multiple lists/strings into a tuple">
+      <created>1667147228727</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1667147228727</updated>
+    </task>
+    <task id="LOCAL-00012" summary="in, min, max, sort, shuffle, random number, random, to number, compound in one line">
+      <created>1667150306125</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1667150306125</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Quizz FizzBuzz">
+      <created>1667155872899</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1667155872899</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Quizz print words that start with S">
+      <created>1667156327626</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1667156327626</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Quizz print words that start with S (considering upper case also">
+      <created>1667156493244</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1667156493244</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Quizz print even numbers, multiples of 3 and general divider printer">
+      <created>1667157527246</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1667157527246</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Quizz print even numbers, multiples of 3 and general divider printer">
+      <created>1667332642262</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1667332642262</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Basic Functions with and without return">
+      <created>1667332676821</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1667332676821</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Function: returning list">
+      <created>1667335221248</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1667335221248</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Shuffle game">
+      <created>1667458517223</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1667458517223</updated>
+    </task>
+    <task id="LOCAL-00021" summary="# passing undefined amount of keyword arguments">
+      <created>1667740469389</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1667740469389</updated>
+    </task>
+    <task id="LOCAL-00022" summary="# exercise print even numbers of an undefined number of Arguments">
+      <created>1667741248746</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1667741248746</updated>
+    </task>
+    <task id="LOCAL-00023" summary="# lesser of two evens&#10;# Exercise Animal crackers&#10;# Exercise Makes twenty&#10;# Capitalize first and 3rd letter&#10;# Master Yoda&#10;# Exercise Almost there&#10;# Exercise has_33&#10;# Paper doll exercise&#10;# Blackjack">
+      <created>1668364059906</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1668364059906</updated>
+    </task>
+    <task id="LOCAL-00024" summary="# test 1 line evaluation of condition">
+      <created>1668364096708</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1668364096708</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Find a spy exercise solution">
+      <created>1668729173462</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1668729173462</updated>
+    </task>
+    <task id="LOCAL-00026" summary="OOP Creating an object, setting class object attributes, attributes and methods">
+      <created>1668882367248</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1668882367248</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Find the oldest cat in town exercise, we are cooler than your mama">
+      <created>1668885125996</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1668885125996</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Exercise use map and list">
+      <created>1668889667155</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1668889667155</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Exercise use filter and list">
+      <created>1668890093021</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1668890093021</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Exercise use lambda map and list">
+      <created>1668890876584</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1668890876584</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Exercise use lambda filter and list">
+      <created>1668891273136</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1668891273136</updated>
+    </task>
+    <task id="LOCAL-00032" summary="# Pangram, reduce a string to its unique letters">
+      <created>1668898993159</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1668898993159</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="# unpacking a dictionary to find keys with a specific value" />
+    <MESSAGE value="# While loop&#10;# pass, continue and break" />
+    <MESSAGE value="Range exercise" />
+    <MESSAGE value="Enumerate exercise" />
+    <MESSAGE value="# Zipping multiple lists/strings into a tuple" />
+    <MESSAGE value="in, min, max, sort, shuffle, random number, random, to number, compound in one line" />
+    <MESSAGE value="Quizz FizzBuzz" />
+    <MESSAGE value="Quizz print words that start with S" />
+    <MESSAGE value="Quizz print words that start with S (considering upper case also" />
+    <MESSAGE value="Quizz print even numbers, multiples of 3 and general divider printer" />
+    <MESSAGE value="Basic Functions with and without return" />
+    <MESSAGE value="Function: returning list" />
+    <MESSAGE value="Shuffle game" />
+    <MESSAGE value="# passing undefined amount of keyword arguments" />
+    <MESSAGE value="# exercise print even numbers of an undefined number of Arguments" />
+    <MESSAGE value="# lesser of two evens&#10;# Exercise Animal crackers&#10;# Exercise Makes twenty&#10;# Capitalize first and 3rd letter&#10;# Master Yoda&#10;# Exercise Almost there&#10;# Exercise has_33&#10;# Paper doll exercise&#10;# Blackjack" />
+    <MESSAGE value="# test 1 line evaluation of condition" />
+    <MESSAGE value="Find a spy exercise solution" />
+    <MESSAGE value="OOP Creating an object, setting class object attributes, attributes and methods" />
+    <MESSAGE value="Find the oldest cat in town exercise, we are cooler than your mama" />
+    <MESSAGE value="Exercise use map and list" />
+    <MESSAGE value="Exercise use filter and list" />
+    <MESSAGE value="Exercise use lambda map and list" />
+    <MESSAGE value="Exercise use lambda filter and list" />
+    <MESSAGE value="# Pangram, reduce a string to its unique letters" />
+    <option name="LAST_COMMIT_MESSAGE" value="# Pangram, reduce a string to its unique letters" />
+  </component>
+</project>

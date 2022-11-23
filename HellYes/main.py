@@ -1,85 +1,87 @@
-"""print('Hellou U')
-age = 4+5
-print(3**3)
-my_cat = 'Lona'
-print(my_cat)
-print(f'{my_cat} is {age}')
-division = age/age
-print(f'age data type is {type(age)}')
-print(f'division data type is {type(division)}')
-print('\n\n\n')
+print('Welcome to Tic Tac Toe')
 
-print('strings\n')
-cat = 'Leonards'
-print(f'first letter of the cat is {cat[0]}')
-print(f'Last letter of the cat is {cat[-1]}')
-print(f'cat has {len(cat)} characters in it')
 
-catFullName = "Leonards Burma"
-print(catFullName[8:-3])
-print(catFullName[3:-3])
-print(catFullName[::2]) # 3rd parameter is step size. Output = Load um
-print(catFullName[::-1]) #Reverse string
+def get_user_symbol():
+    accepted_answer = ('x', 'o')
+    answer = ''
+    while answer not in accepted_answer:
+        answer = input('Please chose your symbol (x/o)')
+    return answer
+# Refactor to highlight that the answer is not acceptable
 
-print(cat + ' ' + catFullName)
-print((cat + ' ')*5)
+user_one = get_user_symbol()
 
-x = "Hello cat"
-print(x.upper()) #uppercase
-print(catFullName.split('a'))
 
-print('Cats name is {1}'.format(cat, 'Gatto', 'Negro'))
-print('\n\n\n')
+def assign_symbol(user_one):
+    if user_one == 'x':
+        user_two = 'o'
+    else:
+        user_two = 'x'
+    return user_two
 
-print('Lists\n')
-my_list = [1,2,3,5]
-other_list = [1,"String",20.1]
-print(my_list)
-print(my_list + other_list)
-cats_list = ['Leo', 'Luna', 'George', 'Migo']
-print(cats_list[1])
-cats_list[0] = 'Ljonis'
-print(cats_list)
-cats_list.append('Muris')
-print(cats_list)
-new_item = cats_list.pop(2)
-print(new_item)
 
-#cats_list.sort()
-sort_list = sorted(cats_list)
-#sort_list.sort()
-print(sort_list)
-print(cats_list)
+user_two = assign_symbol(user_one)
+print(f' User one is {user_one}\n User two is {user_two}')
+# Refactor to use string for consistency
+board = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]
 
-print('\n\n\n')
-print('dictionaries') #uses curly braces, dictionaries cant be sorted
 
-cat_colors = {"Leo":"brown",
-              "Luna":"tiger",
-              "George":"White"}
+def display_board():
+    print(f'     ||     ||     ')
+    print(f'  {board[2][0]}  ||  {board[2][1]}  ||  {board[2][2]}  ')
+    print(f'     ||     ||     ')
+    print(f'======================')
+    print(f'     ||     ||     ')
+    print(f'  {board[1][0]}  ||  {board[1][1]}  ||  {board[1][2]}  ')
+    print(f'     ||     ||     ')
+    print(f'======================')
+    print(f'     ||     ||     ')
+    print(f'  {board[0][0]}  ||  {board[0][1]}  ||  {board[0][2]}  ')
+    print(f'     ||     ||      ')
 
-print(cat_colors["Leo"])
-cat_colors["Migo"] = "Also white"
-print(cat_colors)
-cat_colors.pop("Leo")
-print(cat_colors)
-print(cat_colors.keys())
-print('\n\n\n')
 
-#TUPLES
-#similar to lists but cannot be mutable
-my_tuple = (1,4,2,7,3,9,4,5) #tuples are defined by regular brackets
-my_list = [9,1,5,2,3,4,5]
-t=(1,1,2,3,3)
-print(t.count(1))
-print(t.index(1)) #shows first time element appears
-new_tuple = tuple(my_list)
-print(new_tuple)
-new_list = list(my_tuple)
+display_board()
 
-print(new_tuple)
-print(new_list.pop())
 
-# SETS are unique
-print(1==2)"""
-%%writefile 
+def place_on_board(position, symbol):
+    board_positions_map = {
+        '1': (0, 0), '2': (0, 1), '3': (0, 2),
+        '4': (1, 0), '5': (1, 1), '6': (1, 2),
+        '7': (2, 0), '8': (2, 1), '9': (2, 2)
+    }
+    x = int(board_positions_map[position][0])
+    y = int(board_positions_map[position][1])
+    board[x][y] = symbol
+
+
+def check_strike():
+    pass
+
+
+def run_game_actions():
+    accepted_answer = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'end']
+    strike = False
+    symbol = user_one
+    answer = ''
+    while not strike:
+        if accepted_answer[0] == 'end':
+            print(' No one won, good luck next time')
+            break
+        else:
+            while answer not in accepted_answer:
+                answer = input(f'Please chose one of the following available positions {accepted_answer[:-1]}')
+            place_on_board(answer, symbol)
+            accepted_answer.remove(answer)
+            answer = ''
+            display_board()
+            check_strike()
+
+
+            # Check if there is a strike, can be also started only after the accepted answers list <= 5
+            # switch the user
+            # If strike, announce user won
+
+
+
+
+run_game_actions()
