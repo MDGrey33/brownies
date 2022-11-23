@@ -55,7 +55,15 @@ def place_on_board(position, symbol):
 
 
 def check_strike():
-    pass
+    if board[2][0] == board[2][1] == board[2][2] or \
+            board[1][0] == board[1][1] == board[1][2] or \
+            board[0][0] == board[0][1] == board[0][2] or \
+            board[0][0] == board[1][0] == board[2][0] or \
+            board[0][1] == board[1][1] == board[2][1] or \
+            board[0][2] == board[1][2] == board[2][2] or \
+            board[0][0] == board[1][1] == board[2][2] or \
+            board[0][2] == board[1][1] == board[2][0]:
+        return True
 
 
 def run_game_actions():
@@ -74,7 +82,10 @@ def run_game_actions():
             accepted_answer.remove(answer)
             answer = ''
             display_board()
-            check_strike()
+            strike = check_strike()
+            if strike == True:
+                break
+    print(f' congrats {symbol} wins')
 
 
             # Check if there is a strike, can be also started only after the accepted answers list <= 5

@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2e811bb-f75e-40d2-8b4d-b3b02f727efd" name="Changes" comment="# Pangram, reduce a string to its unique letters" />
+    <list default="true" id="a2e811bb-f75e-40d2-8b4d-b3b02f727efd" name="Changes" comment="TicTacToe refactor removing redundant function input">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HellYes/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/HellYes/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -310,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668898993159</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="TicTacToe refactor removing redundant function input">
+      <created>1669227979404</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1669227979404</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -332,7 +342,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="# unpacking a dictionary to find keys with a specific value" />
     <MESSAGE value="# While loop&#10;# pass, continue and break" />
     <MESSAGE value="Range exercise" />
     <MESSAGE value="Enumerate exercise" />
@@ -357,6 +366,7 @@
     <MESSAGE value="Exercise use lambda map and list" />
     <MESSAGE value="Exercise use lambda filter and list" />
     <MESSAGE value="# Pangram, reduce a string to its unique letters" />
-    <option name="LAST_COMMIT_MESSAGE" value="# Pangram, reduce a string to its unique letters" />
+    <MESSAGE value="TicTacToe refactor removing redundant function input" />
+    <option name="LAST_COMMIT_MESSAGE" value="TicTacToe refactor removing redundant function input" />
   </component>
 </project>
