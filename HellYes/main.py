@@ -57,6 +57,12 @@ def place_on_board(position, symbol):
 def check_strike():
     pass
 
+def switch_user():
+    if symbol == user_one:
+        symbol = user_two
+    elif symbol == user_two:
+        symbol = user_one
+
 
 def run_game_actions():
     accepted_answer = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'end']
@@ -74,6 +80,11 @@ def run_game_actions():
             accepted_answer.remove(answer)
             answer = ''
             display_board()
+            # Switch user. Should put in a function
+            if symbol == user_one:
+                symbol = user_two
+            elif symbol == user_two:
+                symbol = user_one
             check_strike()
 
 
