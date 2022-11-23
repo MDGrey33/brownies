@@ -12,7 +12,7 @@ def get_user_symbol():
 user_one = get_user_symbol()
 
 
-def assign_symbol(user_one):
+def assign_symbol():
     if user_one == 'x':
         user_two = 'o'
     else:
@@ -20,7 +20,7 @@ def assign_symbol(user_one):
     return user_two
 
 
-user_two = assign_symbol(user_one)
+user_two = assign_symbol()
 print(f' User one is {user_one}\n User two is {user_two}')
 # Refactor to use string for consistency
 board = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]
