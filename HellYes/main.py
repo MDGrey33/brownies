@@ -65,6 +65,12 @@ def check_strike():
             board[0][2] == board[1][1] == board[2][0]:
         return True
 
+def switch_user():
+    if symbol == user_one:
+        symbol = user_two
+    elif symbol == user_two:
+        symbol = user_one
+
 
 def run_game_actions():
     accepted_answer = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'end']
@@ -86,6 +92,12 @@ def run_game_actions():
             if strike == True:
                 break
     print(f' congrats {symbol} wins')
+            # Switch user. Should put in a function
+            if symbol == user_one:
+                symbol = user_two
+            elif symbol == user_two:
+                symbol = user_one
+            check_strike()
 
 
             # Check if there is a strike, can be also started only after the accepted answers list <= 5
