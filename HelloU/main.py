@@ -32,7 +32,7 @@ print(your_dog.name, your_dog.breed, your_dog.spots)
 
 my_dog.bark(3)
 your_dog.bark(33333)
-"""
+
 
 
 class Circle():
@@ -52,3 +52,41 @@ my_circle = Circle(radius=30)
 print(my_circle.pi)
 print(my_circle.get_circumference())
 print(my_circle.area)
+"""
+
+
+class Animal():
+
+    def __init__(self):
+        print("Animal created")
+
+    def who_are_you(self):
+        return "I am an animal, a party animal"
+
+    def eat(self):
+        return 'Numunum num num num num num numunum https://youtu.be/vP9r6UjCA7I'
+
+
+class Dog(Animal):
+    def __init__(self):
+        Animal.__init__(self)
+        print("Dog created")
+
+    def who_are_you(self):
+        return "I am an dog,https://youtu.be/Qkuu0Lwb5EM"
+
+    def bark(self):
+        return "Wuf!"
+
+
+my_animal = Animal()
+print(my_animal.who_are_you())
+print(my_animal.eat())
+
+my_dog = Dog()
+print(my_dog.eat())
+print(my_dog.who_are_you())
+print(my_dog.bark())
+
+
+
