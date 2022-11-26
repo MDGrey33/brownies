@@ -52,8 +52,6 @@ my_circle = Circle(radius=30)
 print(my_circle.pi)
 print(my_circle.get_circumference())
 print(my_circle.area)
-"""
-"""
 
 class Animal():
 
@@ -87,7 +85,7 @@ my_dog = Dog()
 print(my_dog.eat())
 print(my_dog.who_are_you())
 print(my_dog.bark())
-"""
+
 
 
 class Dog():
@@ -118,3 +116,33 @@ for pet in [rocky, lona]:
     print(type(pet))
     print(pet.speak())
 
+
+"""
+
+
+class Animal():
+
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        raise NotImplementedError('subclass must implement this abstract method')
+
+
+class Dog(Animal):
+
+    def speak(self):
+        return self.name + ' says Woof'
+
+
+class Cat(Animal):
+
+    def speak(self):
+        return self.name + ' says Miaw'
+
+
+fred = Dog('Fred')
+print(fred.speak())
+
+luna = Cat('Luna')
+print(luna.speak())
