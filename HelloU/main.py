@@ -148,9 +148,6 @@ luna = Cat('Luna')
 print(luna.speak())
 
 
-"""
-
-
 class Book():
 
     def __init__(self, title, author, pages):
@@ -174,3 +171,29 @@ print(b)
 print(len(b))
 del b
 print(b)
+"""
+
+# Distance and slope of a line
+import math
+
+
+class Line:
+
+    def __init__(self, coor1, coor2):
+        self.coor1 = coor1
+        self.coor2 = coor2
+
+    def distance(self):
+        return math.dist(self.coor1, self.coor2)
+
+    def slope(self):
+        return (self.coor2[1] - self.coor1[1]) / (self.coor2[0] - self.coor1[0])
+
+
+coordinate1 = (3, 2)
+coordinate2 = (8, 10)
+
+li = Line(coordinate1, coordinate2)
+
+print(li.distance())
+print(li.slope())
