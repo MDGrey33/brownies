@@ -53,7 +53,7 @@ print(my_circle.pi)
 print(my_circle.get_circumference())
 print(my_circle.area)
 """
-
+"""
 
 class Animal():
 
@@ -87,6 +87,34 @@ my_dog = Dog()
 print(my_dog.eat())
 print(my_dog.who_are_you())
 print(my_dog.bark())
+"""
 
 
+class Dog():
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return f"I am {self.name} and I say Woof!"
+
+
+class Cat():
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return f"I am {self.name} and I say Miaw!"
+
+
+rocky = Dog('Rocky')
+print(rocky.speak())
+
+lona = Cat('Lona')
+print(lona.speak())
+
+
+for pet in [rocky, lona]:
+
+    print(type(pet))
+    print(pet.speak())
 
