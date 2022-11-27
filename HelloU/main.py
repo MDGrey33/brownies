@@ -171,7 +171,6 @@ print(b)
 print(len(b))
 del b
 print(b)
-"""
 
 # Distance and slope of a line
 import math
@@ -197,3 +196,27 @@ li = Line(coordinate1, coordinate2)
 
 print(li.distance())
 print(li.slope())
+
+"""
+import math
+
+
+class Cylinder:
+
+    def __init__(self, height = 1, radius = 1):
+        self.height = height
+        self.radius = radius
+
+    def volume(self):
+        return math.pi*pow(self.radius, 2)*self.height
+
+    def surfa_area(self):
+        return 2 * math.pi * pow(self.radius, 2) + self.height * self.radius * 2 * math.pi
+
+
+c = Cylinder(2, 3)
+print(c.volume())
+print(c.surfa_area())
+
+
+
