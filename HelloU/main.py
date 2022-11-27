@@ -197,7 +197,7 @@ li = Line(coordinate1, coordinate2)
 print(li.distance())
 print(li.slope())
 
-"""
+
 import math
 
 
@@ -218,5 +218,37 @@ c = Cylinder(2, 3)
 print(c.volume())
 print(c.surfa_area())
 
+"""
+import string
+import random
 
 
+class Account:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+
+    def __str__(self):
+        return f"Welcome {self.owner},\nyour balance is {self.balance}."
+
+    def deposit(self, amount):
+        if amount < 1000:
+            self.balance = self.balance + amount
+        else:
+            return f'{self.owner} unless you provide the following information, we will assume you are funding terrorism and close your bank account\n{string.ascii_lowercase*5} \nyou got 5 minutes Bitch!'
+
+
+    def withdraw(self, amount):
+        if amount < self.balance:
+            self.balance = self.balance - amount
+        else:
+            return f'Fund unavailable!'
+
+acct1 = Account('Maija', 100)
+print(acct1)
+print(acct1.owner)
+print(acct1.balance)
+print(acct1.deposit(2000))
+print(acct1.withdraw(75))
+print(acct1.withdraw(500))
+# Fund unavailable
