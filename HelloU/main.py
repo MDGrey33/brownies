@@ -218,7 +218,7 @@ c = Cylinder(2, 3)
 print(c.volume())
 print(c.surfa_area())
 
-"""
+
 import string
 import random
 
@@ -252,3 +252,20 @@ print(acct1.deposit(2000))
 print(acct1.withdraw(75))
 print(acct1.withdraw(500))
 # Fund unavailable
+
+"""
+
+class Character:
+    def __init__(self, name, species, craft):
+        self.name = name
+        self.species = species
+        self.craft = craft
+
+    def shout(self):
+        return "waaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+
+    @classmethod
+    def run(cls, coordinates, steps):
+        return coordinates + steps
+
+
