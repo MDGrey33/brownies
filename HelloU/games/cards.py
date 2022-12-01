@@ -1,6 +1,5 @@
 from random import shuffle
 
-
 suites = ('Clubs', 'Hearts', 'Spades', 'Diamonds')
 ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven',
          'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
@@ -21,12 +20,20 @@ class Card:
         return f'{self.rank} of {self.suite}'
 
 
-def deal_cards(card_deck):
-    shuffle(card_deck)
-    split = len(card_deck) // 2
-    first_hand_cards = card_deck[:split]
-    second_hand_cards = card_deck[split:]
-    return first_hand_cards, second_hand_cards
+class Deck:
+
+    def __init__(self):
+        self.cards = [Card(suite, rank) for suite in suites for rank in ranks]
+
+    def shuffle(self):
+        shuffle(self.cards)
+
+    def deal_cards(self, amount):
+        card_list =[]
+        while not amount == 0:
+            card_list.append(self.cards.pop())
+            amount -= 1
+        return card_list
 
 
 def print_cards(cards):
