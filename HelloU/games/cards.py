@@ -29,11 +29,31 @@ class Deck:
         shuffle(self.cards)
 
     def deal_cards(self, amount):
-        card_list =[]
+        card_list = []
         while not amount == 0:
             card_list.append(self.cards.pop())
             amount -= 1
         return card_list
+
+
+class Player:
+    def __init__(self,name):
+        self.name = name
+        self.cards = []
+
+    def remove_one(self):
+        return self.cards.pop(0)
+
+    def add_cards(self, new_cards):
+        if type(new_cards) == type([]):
+            # For multiple cards
+            self.cards.extend(new_cards)
+        else:
+            # For one card
+            self.cards.append(new_cards)
+
+    def __str__(self):
+        return f'{self.name} has {len(self.cards)} card(s)'
 
 
 def print_cards(cards):
