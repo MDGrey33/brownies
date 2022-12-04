@@ -1,0 +1,119 @@
+from random import shuffle
+
+suites = ('Clubs', 'Hearts', 'Spades', 'Diamonds')
+ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven',
+         'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
+rank_to_value = {'Two': 2, 'Three': 3, 'Four': 4,
+                 'Five': 5, 'Six': 6, 'Seven': 7,
+                 'Eight': 8, 'Nine': 9, 'Ten': 10,
+                 'Jack': 10, 'Queen': 10,
+                 'King': 10, 'Ace': 11}
+
+
+class Card:
+    def __init__(self, suite, rank):
+        self.suite = suite
+        self.rank = rank
+        self.value = rank_to_value[self.rank]
+        self.face_up = True
+
+    def __str__(self):
+        return f'{self.rank} of {self.suite}'
+
+
+class Deck:
+
+    def __init__(self):
+        self.cards = [Card(suite, rank) for suite in suites for rank in ranks]
+
+    def shuffle(self):
+        shuffle(self.cards)
+
+    def deal_cards(self):
+        return self.cards.pop()
+
+
+class Shoe:
+    def __init__(self, deck_count):
+        self.cards = []
+        for x in range(deck_count):
+            self.cards.extend(Deck().cards)
+
+    def shuffle(self, shuffle_times):
+        for x in range(shuffle_times):
+            shuffle(self.cards)
+
+    def deal_card(self, face_up=True):
+        if not face_up:
+            self.cards[0].face_up = False
+        return self.cards.pop(0)
+
+    def __str__(self):
+        return f'Shoe has {len(self.cards)} cards!'
+
+
+class Hand:
+    def __init__(self):
+        self.cards = []
+        self.bet = 0
+
+    @property
+    def cards_value(self):
+        value = 0
+        ace_count = 0
+        for card in self.cards:
+            if card.rank == 'Ace':
+                ace_count += 1
+            value = value + card.value
+            while value > 21 and ace_count > 0:
+                ace_count -= 1
+                value -= 10
+        return value
+
+    def add_card(self, one_card):
+        self.cards.append(one_card)
+
+    def return_card_index(self, card_rank, card_suite):
+        i = 0
+        for card in self.cards:
+            if card.rank == card_rank and card_suite == card_suite:
+                return i
+            i += 1
+
+    def remove_card(self, card_index):
+        self.cards.pop(card_index)
+
+    def show_card(self, index):
+        return self.cards[index]
+
+    def show_cards(self):
+        card_list = []
+        for card in self.cards:
+            card_list.append(card)
+        return card_list
+
+    def add_bet(self, amount):
+        self.bet += amount
+
+    def __str__(self):
+        return f'His hand has {len(self.cards)} cards with {self.bet}$ bet on it'
+
+
+class Player:
+    def __init__(self, name, money_amount=1000):
+        self.name = name
+        self.hand = Hand()
+        self.bankroll = money_amount
+
+    def bet_on_hand(self, bet_amount):
+        self.bankroll -= bet_amount
+        self.hand.add_bet(bet_amount)
+
+    def add_hand(self):
+        pass
+
+    def remove_hand(self):
+        pass
+
+    def __str__(self):
+        return f'{self.name} has {self.bankroll} $ in his bankroll'
