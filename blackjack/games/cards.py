@@ -17,6 +17,9 @@ class Card:
         self.value = rank_to_value[self.rank]
         self.face_up = True
 
+    def set_face_up(self, value=True):
+        self.face_up = value
+
     def __str__(self):
         return f'{self.rank} of {self.suite}'
 
@@ -45,7 +48,7 @@ class Shoe:
 
     def deal_card(self, face_up=True):
         if not face_up:
-            self.cards[0].face_up = False
+            self.cards[0].set_face_up(False)
         return self.cards.pop(0)
 
     def __str__(self):
@@ -95,6 +98,9 @@ class Hand:
     def add_bet(self, amount):
         self.bet += amount
 
+    def reset_bet(self):
+        self.bet = 0
+
     def __str__(self):
         return f'His hand has {len(self.cards)} cards with {self.bet}$ bet on it'
 
@@ -109,11 +115,17 @@ class Player:
         self.bankroll -= bet_amount
         self.hand.add_bet(bet_amount)
 
-    def add_hand(self):
-        pass
+    def give_money(self, amount):
+        self.bankroll -= amount
+        return amount
 
-    def remove_hand(self):
+    def add_money(self, amount):
+        self.bankroll += amount
+
+    def reset_for_new_round(self):
         pass
+        # Define actions needed to be reset for the new reset_for_new_round
+        # reset hands
 
     def __str__(self):
         return f'{self.name} has {self.bankroll} $ in his bankroll'
