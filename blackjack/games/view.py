@@ -22,7 +22,7 @@ class Table:
     def show_information(self, view):
         if view == 'Bet':
             print(self.shoe)
-            print(self.player)
+            print(f'You have {self.player.bankrollY}$ in your bankroll')
 
         elif view == 'Game':
             print(self.shoe)
@@ -55,9 +55,31 @@ class Table:
         else:
             print('The page you requested is not found')
 
+    def player_wins(self, bet_amount):
+        self.player.wins(bet_amount)
+        self.dealer.looses(bet_amount)
+        self.player.push(bet_amount)
+
+    def player_wins_double(self, bet_amount):
+        self.player.wins_double(bet_amount)
+        self.dealer.looses_double(bet_amount)
+        self.player.push(bet_amount)
+
+    def dealer_wins(self, bet_amount):
+        self.dealer.wins(bet_amount)
+
+    def push(self, bet_amount):
+        self.player.push(bet_amount)
+
     def show_actions(self, view):
+
         if view == 'Bet':
-            self.player.bet_on_hand(int(input('How much do you want to start your bet with?')))
+            valid_input = False
+            while not valid_input:
+                bet = (int(input('How much do you want to start your bet with?')))
+                if bet < self.player.bankroll:
+                    valid_input = True
+            self.player.bet_on_hand(bet)
         elif view == 'Game':
             game_on = True
             bust = False
@@ -92,35 +114,40 @@ class Table:
                     while self.dealer.hand.cards_value < 17 and game_on:
                         self.dealer.hand.add_card(self.shoe.deal_card())
                         self.show_information('Game')
-                        time.sleep(3)
+                        time.sleep(1)
                     game_on = False
                     time.sleep(3)
         elif view == 'Account':
             bet_amount = self.player.hand.bet
-            print(f'############################{bet_amount}')
             if self.player.hand.cards_value == 21:
-                self.player.wins_double(bet_amount)
+                self.player_wins_double(bet_amount)
+                """self.player.wins_double(bet_amount)
                 self.dealer.looses_double(bet_amount)
-                self.player.push(bet_amount)
+                self.player.push(bet_amount)"""
 
             elif self.player.hand.cards_value > 21:
-                self.dealer.wins(bet_amount)
+                self.dealer_wins(bet_amount)
+                # self.dealer.wins(bet_amount)
 
             elif self.dealer.hand.cards_value > 21:
-                self.player.wins(bet_amount)
+                self.player_wins(bet_amount)
+                """self.player.wins(bet_amount)
                 self.dealer.looses(bet_amount)
-                self.player.push(bet_amount)
+                self.player.push(bet_amount)"""
 
             elif self.player.hand.cards_value > self.dealer.hand.cards_value:
-                self.player.wins(bet_amount)
+                self.player_wins(bet_amount)
+                """self.player.wins(bet_amount)
                 self.dealer.looses(bet_amount)
-                self.push(bet_amount)
+                self.push(bet_amount)"""
 
             elif self.player.hand.cards_value < self.dealer.hand.cards_value:
-                self.dealer.wins(bet_amount)
+                self.dealer_wins(bet_amount)
+                # self.dealer.wins(bet_amount)
 
             elif self.player.hand.cards_value == self.dealer.hand.cards_value:
-                self.player.push(bet_amount)
+                self.push(bet_amount)
+                # self.player.push(bet_amount)
 
             else:
                 print('We have a problem in accounting.')

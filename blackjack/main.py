@@ -2,18 +2,10 @@ from games.view import *
 
 
 my_player = Player('John', 1001)
-"""dealer = Player('Dealer', 1000000)
-player.bet_on_hand(1000)
-dealer.add_money(player.hand.bet)
-player.hand.reset_bet()
-print(dealer.bankroll)
-print(player.hand.bet)
-print(player.bankroll)"""
-
-
 my_table = Table(my_player)
 game_on = True
 while game_on:
+
     answer = (input('Are you ready to play(Y/N)')).capitalize()
     if answer == 'N':
         break
@@ -31,3 +23,6 @@ while game_on:
     # Accounting
     my_table.show_information('Account')
     my_table.show_actions('Account')
+    if my_player.bankroll <= 0:
+        game_on = False
+
