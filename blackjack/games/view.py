@@ -67,7 +67,7 @@ class Table:
                     break
                 else:
                     while self.player.hand.cards_value < 21 and game_on:
-                        action = input(f'your hand Value is: {self.player.hand.cards_value}\nchose(1 or 2):\n1.X Stand\n2. + Hit ')
+                        action = input(f'your hand Value is: {self.player.hand.cards_value}\nchose(1 or 2):\n1.X Stand\n2. + Hit\n')
                         if action == '1':
                             game_on = False
                             break
@@ -96,23 +96,34 @@ class Table:
                     game_on = False
                     time.sleep(3)
         elif view == 'Account':
+            bet_amount = self.player.hand.bet
+            print(f'############################{bet_amount}')
             if self.player.hand.cards_value == 21:
-                self.player.add_money(self.player.hand.bet)
-                self.player.add_money(self.dealer.give_money(self.player.hand.bet*2))
-                self.player.hand.reset_bet()
+                self.player.wins_double(bet_amount)
+                self.dealer.looses_double(bet_amount)
+                self.player.push(bet_amount)
+
             elif self.player.hand.cards_value > 21:
-                self.dealer.add_money(self.player.hand.bet)
-                self.player.hand.reset_bet()
+                self.dealer.wins(bet_amount)
+
             elif self.dealer.hand.cards_value > 21:
-                self.player.add_money(self.dealer.give_money(self.player.hand.bet))
-                self.player.hand.reset_bet()
+                self.player.wins(bet_amount)
+                self.dealer.looses(bet_amount)
+                self.player.push(bet_amount)
+
             elif self.player.hand.cards_value > self.dealer.hand.cards_value:
-                self.player.add_money(self.dealer.give_money(self.player.hand.bet))
-                self.player.hand.reset_bet()
+                self.player.wins(bet_amount)
+                self.dealer.looses(bet_amount)
+                self.push(bet_amount)
+
             elif self.player.hand.cards_value < self.dealer.hand.cards_value:
-                self.dealer.add_money(self.player.hand.bet)
-                self.player.hand.reset_bet()
+                self.dealer.wins(bet_amount)
+
+            elif self.player.hand.cards_value == self.dealer.hand.cards_value:
+                self.player.push(bet_amount)
+
             else:
                 print('We have a problem in accounting.')
+            self.player.hand.reset_bet()
             self.show_information('Account')
             print('accounting successful')

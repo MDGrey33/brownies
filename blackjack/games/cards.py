@@ -122,10 +122,25 @@ class Player:
     def add_money(self, amount):
         self.bankroll += amount
 
+    def wins_double(self, bet_amount):
+        self.bankroll += (2 * bet_amount)
+
+    def wins(self, bet_amount):
+        self.bankroll += bet_amount
+
+    def looses_double(self, bet_amount):
+        self.bankroll -= (2 * bet_amount)
+
+    def looses(self, bet_amount):
+        self.bankroll -= bet_amount
+
+    def push(self, bet_amount):
+        self.bankroll += bet_amount
+
     def reset_for_new_round(self):
-        pass
-        # Define actions needed to be reset for the new reset_for_new_round
-        # reset hands
+        self.hand = Hand()
+
+
 
     def __str__(self):
         return f'{self.name} has {self.bankroll} $ in his bankroll'
