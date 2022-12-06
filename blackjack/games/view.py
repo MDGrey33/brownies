@@ -9,7 +9,9 @@ class Table:
         self.dealer = Player('Dealer', 1000000)
         self.player = player
         self.blackjack = False
+        self.players = [self.dealer, self.player]
 
+    # Accounting Actions
     def player_wins(self, bet_amount):
         self.player.wins(bet_amount)
         self.dealer.looses(bet_amount)
@@ -26,51 +28,29 @@ class Table:
     def push(self, bet_amount):
         self.player.push(bet_amount)
 
+    # Show views
     def show_information(self, view):
         if view == 'Bet':
             print(self.shoe)
             print(f'You have {self.player.bankroll}$ in your bankroll')
-
         elif view == 'Game':
-            players = [self.dealer, self.player]
 
             print(self.shoe)
             print('\n')
-            time.sleep(1)
-
-            for player in players:
+            for player in self.players:
                 print(player.name)
                 print(player.hand)
                 for card in player.hand.show_cards():
                     print(card)
                 print('\n')
-
-            """print(self.dealer.name)
-            print(self.dealer.hand)
-            for card in self.dealer.hand.show_cards():
-                print(card)
-            for card in :
-                if not card.face_up:
-                    print('Face Down Card')
-                else:
-                    print(card)"""
-            """print(f'\n')
             time.sleep(1)
-            print(self.player)
-            print(self.player.hand)
-            for card in self.player.hand.show_cards():
-                print(card)
-            print('\n')"""
-            time.sleep(1)
-
         elif view == 'Account':
-            # print(self.shoe)
-            print(self.dealer, self.dealer.hand)
-            print(self.player, self.player.hand)
-
+            for player in self.players:
+                print(player, player.hand)
         else:
             print('The page you requested is not found')
 
+    # Action views
     def show_actions(self, view):
 
         if view == 'Bet':
