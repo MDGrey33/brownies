@@ -14,15 +14,16 @@ while game_on:
         my_table.dealer.reset_for_new_round()
     my_table.show_information('Bet')
     my_table.show_actions('Bet')
+    # Bet Set, now dealing cards
     my_player.hand.add_card(my_table.shoe.deal_card())
     my_player.hand.add_card(my_table.shoe.deal_card())
     my_table.dealer.hand.add_card(my_table.shoe.deal_card(False))
     my_table.dealer.hand.add_card(my_table.shoe.deal_card())
+    # Starting the game
     my_table.show_information('Game')
     my_table.show_actions('Game')
-    # Accounting
+    # Starting accounting
     my_table.show_information('Account')
     my_table.show_actions('Account')
     if my_player.bankroll <= 0:
         game_on = False
-

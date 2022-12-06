@@ -59,6 +59,7 @@ class Hand:
     def __init__(self):
         self.cards = []
         self.bet = 0
+        self.bust = False
 
     @property
     def cards_value(self):
@@ -67,10 +68,13 @@ class Hand:
         for card in self.cards:
             if card.rank == 'Ace':
                 ace_count += 1
-            value = value + card.value
+            value += card.value
+            if not card.face_up:
+                value -= card.value
             while value > 21 and ace_count > 0:
                 ace_count -= 1
                 value -= 10
+
         return value
 
     def add_card(self, one_card):
@@ -101,8 +105,12 @@ class Hand:
     def reset_bet(self):
         self.bet = 0
 
+    def set_bust(self, bool_value):
+        self.bust = bool_value
+        return self.bust
+
     def __str__(self):
-        return f'His hand has {len(self.cards)} cards with {self.bet}$ bet on it'
+        return f'His hand has {len(self.cards)} cards with {self.bet}$ bet on it\nHand Value: {self.cards_value}'
 
 
 class Player:
