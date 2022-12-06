@@ -1,13 +1,14 @@
 from random import shuffle
 
-suites = ('Clubs', 'Hearts', 'Spades', 'Diamonds')
+suites = ('of Clubs', 'of Hearts', 'of Spades', 'of Diamonds')
 ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven',
          'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
+# Face Down card is a card of value zero used to replace a face down card in calculations
 rank_to_value = {'Two': 2, 'Three': 3, 'Four': 4,
                  'Five': 5, 'Six': 6, 'Seven': 7,
                  'Eight': 8, 'Nine': 9, 'Ten': 10,
-                 'Jack': 10, 'Queen': 10,
-                 'King': 10, 'Ace': 11}
+                 'Jack': 10, 'Queen': 10, 'King': 10,
+                 'Ace': 11, 'Face Down': 0}
 
 
 class Card:
@@ -21,7 +22,7 @@ class Card:
         self.face_up = value
 
     def __str__(self):
-        return f'{self.rank} of {self.suite}'
+        return f'{self.rank} {self.suite}'
 
 
 class Deck:
@@ -60,6 +61,8 @@ class Hand:
         self.cards = []
         self.bet = 0
         self.bust = False
+        self.face_down_card = Card('Card', 'Face Down')
+        self.face_down_card.set_face_up(False)
 
     @property
     def cards_value(self):
@@ -96,7 +99,10 @@ class Hand:
     def show_cards(self):
         card_list = []
         for card in self.cards:
-            card_list.append(card)
+            if not card.face_up:
+                card_list.append(self.face_down_card)
+            else:
+                card_list.append(card)
         return card_list
 
     def add_bet(self, amount):

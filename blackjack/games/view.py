@@ -1,21 +1,12 @@
 from blackjack.games.cards import *
 import time
 
-# Refactor black_jack_views to list
-
-black_jack_views = {'Bet': 'Place your bets',
-                    'Game': 'Bet until all hands are satisfied',
-                    'Account': 'Account for hand results'}
-betting_chips = {'1000': 1000, '500': 500, '100': 100,
-                 '50': 50, '25': 25, '5': 5, '1': 1}
-
 
 class Table:
     def __init__(self, player):
         self.shoe = Shoe(6)
         self.shoe.shuffle(6)
         self.dealer = Player('Dealer', 1000000)
-        self.views = [black_jack_views.keys()]
         self.player = player
         self.blackjack = False
 
@@ -41,27 +32,36 @@ class Table:
             print(f'You have {self.player.bankroll}$ in your bankroll')
 
         elif view == 'Game':
+            players = [self.dealer, self.player]
+
             print(self.shoe)
             print('\n')
             time.sleep(1)
-            print(self.dealer.name)
+
+            for player in players:
+                print(player.name)
+                print(player.hand)
+                for card in player.hand.show_cards():
+                    print(card)
+                print('\n')
+
+            """print(self.dealer.name)
             print(self.dealer.hand)
             for card in self.dealer.hand.show_cards():
+                print(card)
+            for card in :
                 if not card.face_up:
                     print('Face Down Card')
                 else:
-                    print(card)
-            print(f'\n')
+                    print(card)"""
+            """print(f'\n')
             time.sleep(1)
             print(self.player)
             print(self.player.hand)
             for card in self.player.hand.show_cards():
-                if not card.face_up:
-                    print('Face Down Card')
-                else:
-                    print(card)
-            print('\n')
-            time.sleep(2)
+                print(card)
+            print('\n')"""
+            time.sleep(1)
 
         elif view == 'Account':
             # print(self.shoe)
@@ -77,10 +77,9 @@ class Table:
             valid_input = False
             while not valid_input:
                 bet = input('How much do you want to start your bet with?')
-                if bet.isdigit():
+                if bet.isdigit() and 0 < int(bet) <= self.player.bankroll:
                     bet = int(bet)
-                    if 0 < bet <= self.player.bankroll:
-                        valid_input = True
+                    valid_input = True
             self.player.bet_on_hand(bet)
         elif view == 'Game':
             game_on = True
