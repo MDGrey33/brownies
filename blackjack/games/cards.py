@@ -140,7 +140,5 @@ class Player:
     def reset_for_new_round(self):
         self.hand = Hand()
 
-
-
     def __str__(self):
         return f'{self.name} has {self.bankroll} $ in his bankroll'

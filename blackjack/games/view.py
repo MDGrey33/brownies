@@ -1,6 +1,7 @@
 from blackjack.games.cards import *
 import time
-
+# Refactor black_jack_views to list
+# Refactor to call a function to check for bust
 
 black_jack_views = {'Bet': 'Place your bets',
                     'Game': 'Bet until all hands are satisfied',
@@ -22,7 +23,7 @@ class Table:
     def show_information(self, view):
         if view == 'Bet':
             print(self.shoe)
-            print(f'You have {self.player.bankrollY}$ in your bankroll')
+            print(f'You have {self.player.bankroll}$ in your bankroll')
 
         elif view == 'Game':
             print(self.shoe)
@@ -45,7 +46,7 @@ class Table:
                 else:
                     print(card)
             print('\n')
-            time.sleep(3)
+            time.sleep(2)
 
         elif view == 'Account':
             # print(self.shoe)
@@ -82,8 +83,8 @@ class Table:
             self.player.bet_on_hand(bet)
         elif view == 'Game':
             game_on = True
-            bust = False
-            while game_on and not bust and not self.blackjack:
+            self.bust = False
+            while game_on and not self.bust and not self.blackjack:
                 if self.player.hand.cards_value == 21:
                     self.blackjack = True
                     break
@@ -116,14 +117,11 @@ class Table:
                         self.show_information('Game')
                         time.sleep(1)
                     game_on = False
-                    time.sleep(3)
+                    time.sleep(2)
         elif view == 'Account':
             bet_amount = self.player.hand.bet
             if self.player.hand.cards_value == 21:
                 self.player_wins_double(bet_amount)
-                """self.player.wins_double(bet_amount)
-                self.dealer.looses_double(bet_amount)
-                self.player.push(bet_amount)"""
 
             elif self.player.hand.cards_value > 21:
                 self.dealer_wins(bet_amount)
@@ -131,15 +129,9 @@ class Table:
 
             elif self.dealer.hand.cards_value > 21:
                 self.player_wins(bet_amount)
-                """self.player.wins(bet_amount)
-                self.dealer.looses(bet_amount)
-                self.player.push(bet_amount)"""
 
             elif self.player.hand.cards_value > self.dealer.hand.cards_value:
                 self.player_wins(bet_amount)
-                """self.player.wins(bet_amount)
-                self.dealer.looses(bet_amount)
-                self.push(bet_amount)"""
 
             elif self.player.hand.cards_value < self.dealer.hand.cards_value:
                 self.dealer_wins(bet_amount)
