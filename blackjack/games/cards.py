@@ -31,9 +31,17 @@ class Deck:
         self.cards = [Card(suite, rank) for suite in suites for rank in ranks]
 
     def shuffle(self):
+        """
+        Shuffles the card deck without returning anything
+        :return:
+        """
         shuffle(self.cards)
 
     def deal_cards(self):
+        """
+        Deals one card
+        :return: One card from the top of the deck
+        """
         return self.cards.pop()
 
 
@@ -44,6 +52,11 @@ class Shoe:
             self.cards.extend(Deck().cards)
 
     def shuffle(self, shuffle_times):
+        """
+        Shuffles the shoe based on the number in shuffle times
+        :param shuffle_times: a number
+        :return:
+        """
         for x in range(shuffle_times):
             shuffle(self.cards)
 
