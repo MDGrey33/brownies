@@ -1290,3 +1290,31 @@ print(c.most_common(3))
 
 print(Counter(mylist.split()))
 
+# Default dictionary
+from collections import defaultdict
+
+d = defaultdict(lambda: 0)
+d['correct'] = 100
+print(d['correct'])
+print(d['wrong'])
+d = defaultdict(lambda: 404)
+print(d['wrong'])
+
+dd = {'a': 10}
+dd['b']= 3
+print(dd['b'])
+print(dd['c'])
+
+# Named Tuple
+# Ordinary tuples
+
+my_tuple = (1, 2, 3, 4, 5)
+print(my_tuple[3])
+
+from collections import namedtuple
+
+Dog = namedtuple('Dog', ['age', 'breed', 'name'])
+sammy = Dog(age=1, breed='husky', name='Sam')
+print(type(sammy))
+print(sammy)
+print(sammy.age, sammy.breed)
