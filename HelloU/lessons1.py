@@ -1208,3 +1208,85 @@ from colorama import Fore
 init()
 print(Fore.RED + 'hello there')
 print(Fore.GREEN + 'hello there')
+
+
+items = [ 1, 2, 3, 4, 5, 6]
+
+print('the elements are:', *items, sep='\n')
+
+
+
+# Generators and iterators
+
+def create_cubes(n):
+    result = []
+    for x in range(n):
+        result = yield x**3
+    return result
+
+
+for x in create_cubes(10):
+    print(x)
+
+
+def simple_gen():
+    for x in range(300):
+        yield x
+
+g = simple_gen()
+
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+
+
+
+s = 'hello'
+
+for letter in s:
+    print(letter)
+
+s_iter = iter(s)
+print(next(s_iter))
+print(next(s_iter))
+print(next(s_iter))
+
+
+def generate_squares(upper_limit):
+    for x in range(upper_limit):
+        yield x**3
+
+
+list = generate_squares(10)
+
+for number in list:
+    print(number)
+
+import random
+
+
+def random_number(low, high, amount_of_numbers):
+    for x in range(amount_of_numbers):
+        yield random.randint(low, high)
+
+
+for number in random_number(1,10,12):
+    print(number)
+
+
+# Counters
+
+from collections import Counter
+
+mylist = [1, 2, 3, 4, 4, 4, 5, 6, 6, 6, 7, 8, 7, 8]
+print(Counter(mylist))
+
+mylist = "hello you how are you"
+
+c = (Counter(mylist))
+
+print(c.most_common(3))
+
+print(Counter(mylist.split()))
+
