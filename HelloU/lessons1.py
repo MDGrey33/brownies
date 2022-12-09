@@ -1,4 +1,4 @@
-print('Hello U')
+"""print('Hello U')
 age = 4+5
 print(3**3)
 my_cat = 'Lona'
@@ -1318,3 +1318,150 @@ sammy = Dog(age=1, breed='husky', name='Sam')
 print(type(sammy))
 print(sammy)
 print(sammy.age, sammy.breed)
+
+# OS commands test outside virtual environment of pycharm
+import os
+
+print("Path at terminal when executing this file")
+print(os.getcwd() + "\n")
+
+print("This file path, relative to os.getcwd()")
+print(__file__ + "\n")
+
+print("This file full path (following symlinks)")
+full_path = os.path.realpath(__file__)
+print(full_path + "\n")
+
+print("This file directory and name")
+path, filename = os.path.split(full_path)
+print(path + ' --> ' + filename + "\n")
+
+print("This file directory only")
+print(os.path.dirname(full_path))
+
+"""
+"""output:
+
+python3 main.py
+Path at terminal when executing this file
+/Users/roland/code/brownies/HelloU
+
+This file path, relative to os.getcwd()
+/Users/roland/code/brownies/HelloU/main.py
+
+This file full path (following symlinks)
+/Users/roland/code/brownies/HelloU/main.py
+
+This file directory and name
+/Users/roland/code/brownies/HelloU --> main.py
+
+This file directory only
+/Users/roland/code/brownies/HelloU"""
+"""
+
+# OS work, don't run before you read and research carefully
+
+import shutil
+import os
+
+os.listdir('/Users/roland/code/brownies/HelloU/resources/')
+"""
+"""Output
+python3 main.py"""
+"""
+# Moves a file
+shutil.move('./my_file.txt', 'my_file_lines.txt')
+# Deletes a folder
+shutil.rmtree('./resources/test')
+os.listdir('/Users/roland/code/brownies/HelloU/resources/')
+# removes a folder if the folder is empty
+os.rmdir('./resources/test')
+# deletes a file
+os.unlink('/Users/roland/code/brownies/HelloU/resource/test/my_file.txt')
+
+# prints a list of folders and subfolders
+
+import os
+
+print(os.getcwd())
+directory = os.getcwd()
+
+for folder, sub_folders, files in os.walk(directory):
+    print(f'currently looking at {folder}')
+    print('\n')
+    print('The subfolders are:')
+    for sub_folder in sub_folders:
+        print(f'Subfolder: {sub_folder}')
+    print('\nthe files are:')
+    for file in files:
+        print(f'\t file: {file}')
+"""
+
+# Date and time
+import datetime
+
+my_time = datetime.time(2,22)
+
+print(my_time)
+print(my_time.hour)
+print(my_time.minute)
+
+today = datetime.date.today()
+
+print(today)
+print(today.ctime())
+
+from datetime import datetime
+from datetime import date
+
+now = datetime(2021, 10, 3, 14, 20, 1)
+print(now)
+
+date1 = date(2021,11,3)
+date2 = date(2020,11,3)
+result = date1 - date2
+print(result)
+print(type(result))
+later = datetime(2021, 10, 3, 14, 20, 1)
+before = datetime(2020, 10, 3, 4, 20, 1)
+
+diff = later - before
+
+print(diff)
+print(diff.seconds)
+
+# math in python
+# Numpy is worth looking in for deep math
+
+import math
+import random
+
+# help(math)
+
+value = 4.35
+print(math.floor(value))
+print(math.ceil(value))
+print(round(value))
+
+print(math.pi)
+
+print(math.e)
+
+my_list = range(1, 50)
+
+print(random.choice(my_list))
+print(random.sample(population=my_list, k=10))
+random.uniform(a=0, b=100)
+random.gauss(mu=0, sigma=1)
+
+
+# debugging
+import pdb
+
+x = [1, 2, 3]
+y = 2
+z = 3
+
+result = y + z
+pdb.set_trace()
+result2 = x + y
