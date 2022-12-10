@@ -1463,4 +1463,98 @@ z = 3
 result = y + z
 pdb.set_trace()
 result2 = x + y
+
+text = "The agent's phone number is Maija Maria Naria 408-555-1234. call phone soon!"
+
+print('phone' in text)
+
+import re
+
+pattern = 'phone'
+
+print(re.search(pattern, text))
+
+pattern = 'Julien'
+
+print(re.search(pattern, text))
+
+pattern = 'phone'
+
+match = re.search(pattern, text)
+
+match
+
+match.span()
+match.start()
+match.end()
+
+print(re.findall(pattern, text))
+
+
+for match in re.finditer(pattern, text):
+    print(match)
+    print(match.group())
+
+phone = re.search(r'\d\d\d-\d\d\d-\d\d\d\d', text)
+print(phone)
+print(phone.group())
+phone = re.search(r'\d+-\d+-\d+', text)
+print(phone)
+
+phone = re.search(r'\d{3}-\d{3}-\d{4}', text)
+print(phone)
+
+phone = re.findall(r'M*a*i*', text)
+print(phone)
+
+phone_pattern = re.compile(r'(\d{3})-(\d{3})-(\d{4})')
+results = re.search(phone_pattern,text)
+print(results.group())
+print(results.group(3))
+
+print(re.search(r'cat|dog', 'The cat is here'))
+print(re.findall(r'.at', 'the cat in the hat went splat'))
+
+print(re.findall(r'^\d', '1 is a number, where 2 is two'))
+
+print(re.findall(r'\d$', 'you are the number 2'))
+
+phrase = 'There are 3 numbers 34 inside 5 this sentence'
+
+pattern = r'[^\d]'
+
+print(re.findall(pattern, phrase))
+
+# Creating files zipping and unzipping
+
+f = open('file_one.txt', 'w+')
+f.write('ONE FILE')
+f.close()
+
+f = open('file_two.txt', 'w+')
+f.write('TWO FILE')
+f.close()
+
+import zipfile
+
+compressed_file = zipfile.ZipFile('compressed_file.zip','w')
+
+compressed_file.write('file_one.txt', compress_type=zipfile.ZIP_DEFLATED)
+compressed_file.write('file_two.txt', compress_type=zipfile.ZIP_DEFLATED)
+
+compressed_file.close()
+
+zip_object = zipfile.ZipFile('compressed_file.zip', 'r')
+zip_object.extractall('extracted_content')
+
+import shutil
+directory_to_zip = '/Users/roland/code/brownies/HelloU/extracted_content'
+output_filename = 'example'
+
+shutil.make_archive(output_filename, 'zip', directory_to_zip)
+
+shutil.unpack_archive('example.zip', 'final_unzip', 'zip')
+
+
 """
+
