@@ -1395,12 +1395,11 @@ for folder, sub_folders, files in os.walk(directory):
     print('\nthe files are:')
     for file in files:
         print(f'\t file: {file}')
-"""
 
 # Date and time
 import datetime
 
-my_time = datetime.time(2,22)
+my_time = datetime.time(2, 22)
 
 print(my_time)
 print(my_time.hour)
@@ -1417,8 +1416,8 @@ from datetime import date
 now = datetime(2021, 10, 3, 14, 20, 1)
 print(now)
 
-date1 = date(2021,11,3)
-date2 = date(2020,11,3)
+date1 = date(2021, 11, 3)
+date2 = date(2020, 11, 3)
 result = date1 - date2
 print(result)
 print(type(result))
@@ -1454,7 +1453,6 @@ print(random.sample(population=my_list, k=10))
 random.uniform(a=0, b=100)
 random.gauss(mu=0, sigma=1)
 
-
 # debugging
 import pdb
 
@@ -1465,3 +1463,4 @@ z = 3
 result = y + z
 pdb.set_trace()
 result2 = x + y
+"""
