@@ -1556,5 +1556,25 @@ shutil.make_archive(output_filename, 'zip', directory_to_zip)
 shutil.unpack_archive('example.zip', 'final_unzip', 'zip')
 
 
+
+# More decorators
+
+def my_decorator(func):
+    def wrap_function(x):
+        print('x'*8)
+        func(x)
+        print('x' * 8)
+    return wrap_function
+
+
+@my_decorator
+def hello(greeting):
+    print(greeting, ':)')
+
+
+hello('hi')
+
+
+
 """
 
