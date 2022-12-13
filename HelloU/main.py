@@ -1,41 +1,26 @@
-import requests
 import json
+import time
+from flask import *
+
+app = Flask(__name__)
 
 
-def jason_print(object):
-    text = json.dumps(object, sort_keys=True, indent=4)
-    print(text)
+@app.route('/', methods=['GET'])
+def home_page():
+    data_set ={'Page': 'Home', 'Message': 'successfully loaded the home page', 'Timestamp': time.time() }
+    json_dump = json.dumps(data_set)
+
+    return json_dump
 
 
-# Astronauts in space
-response = requests.get('http://api.open-notify.org/astros.json')
-# jason_print(response.json())
-if response.status_code == 200:
-    astronauts_in_space = json.loads(response.content)
-    print('The astronauts in space at this point are:')
-    for astronaut in astronauts_in_space['people']:
-        print(astronaut['name'] + ' traveled in ' + astronaut['craft'])
-else:
-    print('Something went wrong')
-    print(response.status_code)
-    print(response)
+@app.route('/user/', methods=['GET'])
+def request_page():
+    user_query = str(request.args.get('user')) #/user/?user=usergoeshere
+    data_set = {'Page': 'user page', 'Message': f'successfully loaded the profile for {user_query}',  'Timestamp': time.time()}
+    json_dump = json.dumps(data_set)
 
-print('\n')
+    return json_dump
 
 
-def print_response(url, parameters):
-    response = requests.get(url, params=parameters)
-    jason_print(response.json())
-    return response
-
-
-# Data USA population
-parameters = {
-    'drilldowns': 'Nation',
-    'measures': 'Population'
-}
-url = 'https://datausa.io/api/data'
-response = print_response(url, parameters)
-population_year = json.loads(response.content)
-for year in population_year['data']:
-    print(year['ID Year'], ": ", year['Population'])
+if __name__ == '__main__':
+    app.run(port=7777)
