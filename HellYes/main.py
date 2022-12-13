@@ -81,5 +81,5 @@ print(new_tuple)
 print(new_list.pop())
 
 # SETS are unique
-print(1==2)"""
-%%writefile 
+print(1==2)
+%%writefile """
