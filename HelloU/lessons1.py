@@ -1685,5 +1685,33 @@ population_year = json.loads(response.content)
 for year in population_year['data']:
     print(year['ID Year'], ": ", year['Population'])
 
+# Basic API Implementation with Flask
+
+import json
+import time
+from flask import *
+
+app = Flask(__name__)
+
+
+@app.route('/', methods=['GET'])
+def home_page():
+    data_set ={'Page': 'Home', 'Message': 'successfully loaded the home page', 'Timestamp': time.time() }
+    json_dump = json.dumps(data_set)
+
+    return json_dump
+
+
+@app.route('/user/', methods=['GET'])
+def request_page():
+    user_query = str(request.args.get('user')) #/user/?user=usergoeshere
+    data_set = {'Page': 'user page', 'Message': f'successfully loaded the profile for {user_query}',  'Timestamp': time.time()}
+    json_dump = json.dumps(data_set)
+
+    return json_dump
+
+
+if __name__ == '__main__':
+    app.run(port=7777)
 """
 
