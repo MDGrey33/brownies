@@ -1,28 +1,36 @@
 # Web Scraping
+from turtledemo.penrose import star
+
 import requests, bs4, lxml
 
-result = requests.get('http://example.com/')
-# print(result.text)
+"""# result = requests.get('http://example.com/')
+page_number = 1
+final_url = base_url.format(page_number)
+print(final_url)
+
+result = requests.get(final_url)
 soup = bs4.BeautifulSoup(result.text, 'lxml')
-# element = soup.select('title')
-# element = soup.select('h1')
-element = soup.select('title')[0].get_text()
-site_paragraphs = soup.select("p")
-# print(site_paragraphs[0].getText())
+products = soup.select(".product_pod")
+example = products[0]
+print(example.select('.star-rating.Three'))
+print(example.select('a')[1]['title'])
+print(example.select('a'))
+"""
+base_url = 'https://books.toscrape.com/catalogue/page-{}.html'
+two_star_title = []
 
-res = requests.get('https://en.wikipedia.org/wiki/Grace_Hopper')
-soup = bs4.BeautifulSoup(res.text, 'lxml')
-# for item in soup.select('.toctext'):
-    # print(item.text)
-# print(soup.select('.toctext')[i])
-# print(text)
+for n in range(1, 52):
 
-res = requests.get('https://en.wikipedia.org/wiki/Deep_Blue_(chess_computer)')
-soup = bs4.BeautifulSoup(res.text, 'lxml')
-images = soup.select('.thumbimage')[0]
-print(images['src'])
-image_link = requests.get('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Kasparov_Magath_1985_Hamburg-2.png/220px-Kasparov_Magath_1985_Hamburg-2.png')
-print(image_link.content)
-f = open('my_computer_image.png', 'wb')
-f.write(image_link.content)
-f.close()
+    scrape_url = base_url.format(n)
+    res = requests.get(scrape_url)
+
+    soup = bs4.BeautifulSoup(res.text, 'lxml')
+    books = soup.select('.product_pod')
+
+    for book in books:
+        if len(book.select('.star-rating.Two')) != 0:
+            book_title = book.select('a')[1]['title']
+            two_star_title.append(book_title)
+
+for title in two_star_title:
+    print(title)
