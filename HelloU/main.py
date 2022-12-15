@@ -20,7 +20,7 @@ base_url = 'https://books.toscrape.com/catalogue/page-{}.html'
 two_star_title = []
 
 for n in range(1, 52):
-
+    print(n, ' out of 52', len(two_star_title), ' books found so far')
     scrape_url = base_url.format(n)
     res = requests.get(scrape_url)
 
