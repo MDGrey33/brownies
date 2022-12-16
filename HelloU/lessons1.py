@@ -1744,6 +1744,94 @@ f.write(image_link.content)
 f.close()
 
 
+# Web Scraping
+import requests, bs4, lxml
+
+author_list = set()
+quote_list = []
+tag_list = set()
+
+for n in range(1, 100):
+    print('Scraping page ', n)
+    base_url = 'http://quotes.toscrape.com/page/{}/'
+    scrape_url = base_url.format(n)
+    res = requests.get(scrape_url)
+    soup = bs4.BeautifulSoup(res.text, 'lxml')
+
+    # Extract authors
+    authors = soup.select('.author')
+    for author in authors:
+        author_list.add(author.text)
+
+    # Extract Quotes
+    quotes = soup.select('.text')
+    for quote in quotes:
+        quote_list.append(quote.text)
+
+    # Extract tags
+    tags_box = soup.select('.col-md-4.tags-box')
+    tags = tags_box[0].select('a')
+    for tag in tags:
+        tag_list.add(tag.text)
+
+    pager = soup.select('.pager')
+    next_page = pager[0].select('.next')
+    if len(next_page) == 0:
+        print(n, ' pages scraped.')
+        print(len(author_list), ' authors collected')
+        print(len(quote_list), ' quotes collected')
+        break
+
+
+print(quote_list)
+print(author_list)
+print(tag_list)
+
+# Working with images
+
+from PIL import Image
+
+img = Image.open('my_computer_image.png')
+two = Image.open('2.png')
+print(img.size, img.format_description, img.filename)
+x = 0
+y = 0
+w = 210
+h = 162
+comp = img.crop((x, y, w, h))
+two = img.crop(((x/2), (y/2), (w/2), (h/2)))
+
+# img.show()
+img.resize((50, 50))
+img.rotate(90)
+# img.show()
+
+img.putalpha(10)
+# img.paste(im=comp, box=(0, 0), mask=two)
+img.show()
+img.save('purple.png')
+
+# OS Functions 
+
+print("Path at terminal when executing this file")
+print(os.getcwd() + "\n")
+
+print("This file path, relative to os.getcwd()")
+print(__file__ + "\n")
+
+print("This file full path (following symlinks)")
+full_path = os.path.realpath(__file__)
+print(full_path + "\n")
+
+print("This file directory and name")
+path, filename = os.path.split(full_path)
+print(path + ' --> ' + filename + "\n")
+
+print("This file directory only")
+print(os.path.dirname(full_path))
+
+
+
 
 """
 

@@ -1,42 +1,30 @@
-# Web Scraping
-import requests, bs4, lxml
+import csv
 
-author_list = set()
-quote_list = []
-tag_list = set()
+# Open csv file
+data = open('resources/example.csv', encoding='utf-8')
+csv_data = csv.reader(data)
+data_lines = list(csv_data)
+for line in data_lines:
+    print(line)
 
-for n in range(1, 100):
-    print('Scraping page ', n)
-    base_url = 'http://quotes.toscrape.com/page/{}/'
-    scrape_url = base_url.format(n)
-    res = requests.get(scrape_url)
-    soup = bs4.BeautifulSoup(res.text, 'lxml')
+# pull data out of csv file
+all_emails = []
+for line in data_lines[1:]:
+    all_emails.append(line[3])
 
-    # Extract authors
-    authors = soup.select('.author')
-    for author in authors:
-        author_list.add(author.text)
+full_name = []
+for line in data_lines[1:]:
+    full_name.append(line[1] + ' ' + line[2])
 
-    # Extract Quotes
-    quotes = soup.select('.text')
-    for quote in quotes:
-        quote_list.append(quote.text)
+# Create a file and store date
+file_to_output = open('to_save_file.csv', mode='w', newline='')
+csv_writer = csv.writer(file_to_output, delimiter=',')
+csv_writer.writerow(['1', '2', '3'])
+csv_writer.writerows([['1', '2', '3'], ['1', '2', '3']])
+file_to_output.close()
 
-    # Extract tags
-    tags_box = soup.select('.col-md-4.tags-box')
-    tags = tags_box[0].select('a')
-    for tag in tags:
-        tag_list.add(tag.text)
-
-    pager = soup.select('.pager')
-    next_page = pager[0].select('.next')
-    if len(next_page) == 0:
-        print(n, ' pages scraped.')
-        print(len(author_list), ' authors collected')
-        print(len(quote_list), ' quotes collected')
-        break
-
-
-print(quote_list)
-print(author_list)
-print(tag_list)
+# Add a line
+f = open('to_save_file.csv', mode='a', newline='')
+csv_writer = csv.writer(f)
+csv_writer.writerow(['1', '2', '3'])
+file_to_output.close()
