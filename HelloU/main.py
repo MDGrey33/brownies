@@ -1,30 +1,24 @@
-import csv
+# Open and read a page from a pdf file
+# Write page one from the file to a new pdf file
+import PyPDF2
 
-# Open csv file
-data = open('resources/example.csv', encoding='utf-8')
-csv_data = csv.reader(data)
-data_lines = list(csv_data)
-for line in data_lines:
-    print(line)
+f = open('resources/Working_Business_Proposal.pdf', 'rb')
+pdf_reader = PyPDF2.PdfFileReader(f)
+print(pdf_reader.numPages)
 
-# pull data out of csv file
-all_emails = []
-for line in data_lines[1:]:
-    all_emails.append(line[3])
+page_one = pdf_reader.getPage(0)
 
-full_name = []
-for line in data_lines[1:]:
-    full_name.append(line[1] + ' ' + line[2])
+page_one_text = page_one.extractText()
 
-# Create a file and store date
-file_to_output = open('to_save_file.csv', mode='w', newline='')
-csv_writer = csv.writer(file_to_output, delimiter=',')
-csv_writer.writerow(['1', '2', '3'])
-csv_writer.writerows([['1', '2', '3'], ['1', '2', '3']])
-file_to_output.close()
-
-# Add a line
-f = open('to_save_file.csv', mode='a', newline='')
-csv_writer = csv.writer(f)
-csv_writer.writerow(['1', '2', '3'])
-file_to_output.close()
+print(page_one_text)
+f.close()
+f = open('resources/Working_Business_Proposal.pdf', 'rb')
+pdf_reader = PyPDF2.PdfFileReader(f)
+first_page = pdf_reader.getPage(0)
+pdf_writer = PyPDF2.PdfWriter()
+print(type(first_page))
+pdf_writer.addPage(first_page)
+pdf_output = open('Some_Brand_New_doc.pdf', 'wb')
+pdf_writer.write(pdf_output)
+f.close()
+pdf_output.close()
