@@ -1788,28 +1788,33 @@ print(author_list)
 print(tag_list)
 
 # Working with images
-
 from PIL import Image
 
-img = Image.open('my_computer_image.png')
-two = Image.open('2.png')
-print(img.size, img.format_description, img.filename)
-x = 0
-y = 0
-w = 210
-h = 162
-comp = img.crop((x, y, w, h))
-two = img.crop(((x/2), (y/2), (w/2), (h/2)))
+pencils = Image.open('pencils.jpg')
+mac = Image.open('example.jpg')
+# print(type(mac))
+# mac.show()
+print(mac.size)
+# print(mac.format_description)
 
-# img.show()
-img.resize((50, 50))
-img.rotate(90)
-# img.show()
+x = 890
+y = 850
+w = 1140
+h = 1202
+computer = mac.crop((x, y, w, h))
+mac.paste(im=computer, box=(0, 0))
 
-img.putalpha(10)
-# img.paste(im=comp, box=(0, 0), mask=two)
-img.show()
-img.save('purple.png')
+x1 = 0
+y1 = 500
+w1 = 650
+h1 = 1202
+pens = pencils.crop((x1, y1, w1, h1))
+pens.putalpha(100)
+mac.paste(im=pens, box=(0, 850), mask=pens)
+blue = Image.open('purple.png')
+blue.putalpha(100)
+mac.paste(im=blue, box=(890, 850), mask=blue)
+mac.show()
 
 # OS Functions 
 
@@ -1860,6 +1865,32 @@ f = open('to_save_file.csv', mode='a', newline='')
 csv_writer = csv.writer(f)
 csv_writer.writerow(['1', '2', '3'])
 file_to_output.close()
+
+
+# Open and read a page from a pdf file
+# Write page one from the file to a new pdf file
+import PyPDF2
+
+f = open('resources/Working_Business_Proposal.pdf', 'rb')
+pdf_reader = PyPDF2.PdfFileReader(f)
+print(pdf_reader.numPages)
+
+page_one = pdf_reader.getPage(0)
+
+page_one_text = page_one.extractText()
+
+print(page_one_text)
+f.close()
+f = open('resources/Working_Business_Proposal.pdf', 'rb')
+pdf_reader = PyPDF2.PdfFileReader(f)
+first_page = pdf_reader.getPage(0)
+pdf_writer = PyPDF2.PdfWriter()
+print(type(first_page))
+pdf_writer.addPage(first_page)
+pdf_output = open('Some_Brand_New_doc.pdf', 'wb')
+pdf_writer.write(pdf_output)
+f.close()
+pdf_output.close()
 
 
 
