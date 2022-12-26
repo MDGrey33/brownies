@@ -1,36 +1,46 @@
-# Working with advanced Sets
+# H20 Wave ui
+# pip install h2o_wave
+# download wave server https://wave.h2o.ai/docs/installation and unpacks
+# in terminal go to wave directory and ./waved to start the server
+from h2o_wave import site, ui
+import time
 
-s = set()
-s.add(1)
-s.add(2)
-s.add(1)
-sc = s.copy()
-s.add(4)
-print(s)
-print(sc)
-print(s.difference(sc))
-set1 = {1, 2, 3}
-set2 = {1, 4, 5}
-print(set1.difference_update(set2), '\n', set1, '\n', set2)
-set2.discard(5)
-print(set2)
+name = 'Roland'
 
-s1 = {1, 2, 3}
-s2 = {1, 2, 4}
-print(s1.intersection(s2))
-s1.intersection_update(s2)
-print(s1)
+main = site['/']
+
+main['title'] = ui.markdown_card(
+    box='1 1 2 2',
+    title=f'Hello {name}',
+    content='This is the main page body'
+)
+
+main['body'] = ui.markdown_card(
+    box='3 1 2 2',
+    title=f'{name} What are you up tp today?',
+    content='Lets put allot of text here to see how this looks like. \nWhat if we make two lines, would this still work?'
+)
 
 
-s1 = {1, 2}
-s2 = {1, 2, 4}
-s3 = {5}
+main.save()
 
-print(s1.isdisjoint(s3))
-print(s1.issubset(s2))
-print(s2.issuperset(s1))
 
-s1 = {1, 2}
-s2 = {1, 2, 4}
-s1.update(s2)
-print(s1, s2)
+page = site['/beer']
+
+beer_verse = '''={{before}} bottles of beer on the wall, {{before}} bottles of beer.
+
+Take one down, pass it around, {{after}} bottles of beer on the wall...
+'''
+
+beer_card = page.add('wall', ui.markdown_card(
+    box='1 1 4 2',
+    title='99 Bottles of Beer',
+    content=beer_verse,
+    data=dict(before='99', after='98'),
+))
+
+for i in range(99, 0, -1):
+    beer_card.data.before = str(i)
+    beer_card.data.after = str(i - 1)
+    page.save()
+    time.sleep(1)
