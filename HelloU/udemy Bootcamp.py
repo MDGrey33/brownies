@@ -1940,5 +1940,13 @@ s2 = {1, 2, 4}
 s1.update(s2)
 print(s1, s2)
 
+square_feet = 5
+square_meters = square_feet / 10.8
+print(f'{square_feet} sq ft is {square_meters:.2f} sq meters')
+
+name = 'Charbel'
+greeting = 'Welcome {}'
+with_name = greeting.format(name)
+print(with_name)
 
 """
